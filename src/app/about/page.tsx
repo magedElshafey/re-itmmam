@@ -11,13 +11,16 @@ import { useTranslation } from "react-i18next";
 import Title from "../../components/common/title/Title";
 import { aboutSuuport } from "../../data/data";
 import GrayCard from "../../components/common/cards/GrayCard";
-import { ourMandate } from "../../data/data";
 import vissionImg from "../../assets/vission.png";
 import missionImg from "../../assets/mission.png";
+import useRgulatoryMandate from "./api/useRgulatoryMandate ";
+import useWhyUs from "../home/api/useWhyUs";
 const AboutPage = () => {
   const { t, i18n } = useTranslation();
   const { isLoading, data: data } = useAbout();
-  if (isLoading) {
+  const { isLoading: loadingRegural, data: regural } = useRgulatoryMandate();
+  const { isLoading: loadingWhyUs, data: whyUsData } = useWhyUs();
+  if (isLoading || loadingRegural || loadingWhyUs) {
     return <Loader />;
   }
   const values = data?.filter((item: About) => item?.type === "values") || [];
@@ -30,7 +33,6 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
-  console.log("about data is", data);
   return (
     <>
       <Head
@@ -49,7 +51,7 @@ const AboutPage = () => {
           </div>
         )}
         <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
-          {ourMandate?.length ? (
+          {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
               <p className="w-full md:w-1/2  mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
@@ -57,7 +59,7 @@ const AboutPage = () => {
                 complementary, fully regulated services:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
-                {ourMandate?.map((item, index) => (
+                {regural?.map((item: any, index: number) => (
                   <div key={index} className="rounded-md">
                     <img
                       alt={item?.title}
@@ -68,7 +70,9 @@ const AboutPage = () => {
                       <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-3">
                         {item?.title}
                       </p>
-                      <p className="text-center">{item?.description}</p>
+                      <div className="text-center">
+                        <HtmlRenderer html={item?.description} />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -77,7 +81,7 @@ const AboutPage = () => {
           ) : null}
           {/**mission and vission */}
           <div className="bg-[#00F9FF] py-4 px-8 bg-opacity-[8%]">
-            <div className="flex items-center flex-col md:flex-row gap-4 md:gap-5 lg:gap-6 mb-5">
+            <div className="flex  flex-col md:flex-row gap-4 md:gap-5 lg:gap-6 mb-5">
               <div className="flex flex-col items-center gap-2">
                 <img
                   alt="vissio"

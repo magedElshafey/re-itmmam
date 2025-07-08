@@ -14,3 +14,7 @@ export const employees: string = "job_hierarchy";
 export const lists: string = "financial_menus";
 export const executive_management: string = "executive_management";
 export const shareholders: string = "shareholders";
+export const whyUs = "why_choose_us";
+export const data_entries = "data_entries";
+export const home_page = "home_page";
+export const regulatory_mandate = "regulatory_mandate ";

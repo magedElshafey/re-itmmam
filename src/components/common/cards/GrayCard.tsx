@@ -1,9 +1,8 @@
+import HtmlRenderer from "../html/HtmlRender";
+
 interface GrayCardProps {
   index: number;
-  data: {
-    title: string;
-    description: string;
-  };
+  data: any;
 }
 const GrayCard: React.FC<GrayCardProps> = ({ index, data }) => {
   return (
@@ -12,11 +11,11 @@ const GrayCard: React.FC<GrayCardProps> = ({ index, data }) => {
         {++index}
       </p>
       <p className="text-md md:text-lg lg:text-xl 2xl:text-2xl font-bold z-30 text-mainColor">
-        {data?.title} :
+        {data?.title}
       </p>
-      <p className="text-center text-mainColor w-full md:w-1/2 mx-auto">
-        {data?.description}
-      </p>
+      <div className="text-center text-mainColor w-full md:w-1/2 mx-auto">
+        <HtmlRenderer html={data?.description || ""} />
+      </div>
     </div>
   );
 };
