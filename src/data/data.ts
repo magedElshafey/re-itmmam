@@ -1,3 +1,4 @@
+import about from "../assets/about-01.png";
 // types
 import { Nav } from "../types/Nav";
 export const navLinks: Nav[] = [
@@ -23,12 +24,12 @@ export const navLinks: Nav[] = [
   },
   {
     name: "declerations and publication",
-    link: "/services",
+    link: "/lists",
     id: 5,
   },
   {
     name: "inquires and complaints",
-    link: "/services",
+    link: "/call-us",
     id: 4,
   },
 ];
@@ -59,5 +60,64 @@ export const footerLinks: Nav[] = [
         id: 5,
       },
     ],
+  },
+];
+
+export const aboutSuuport: { title: string; description: string }[] = [
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+];
+export const whyUs: { title: string; description: string }[] = [
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+  {
+    title: "Integrated Expertise",
+    description:
+      "From structuring complex deals to managing multi-asset funds . we cover the entire investments",
+  },
+];
+export const ourMandate: {
+  image: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    image: about,
+    title: "Asset Management",
+    description:
+      "Disciplined, research investment process while being cognizant of risks for managing  portfoliosspanning multiple asset classes, all stewarded with fiduciary rigor.",
+  },
+  {
+    image: about,
+    title: "Asset Management",
+    description:
+      "Disciplined, research investment process while being cognizant of risks for managing  portfoliosspanning multiple asset classes, all stewarded with fiduciary rigor.",
+  },
+  {
+    image: about,
+    title: "Asset Management",
+    description:
+      "Disciplined, research investment process while being cognizant of risks for managing  portfoliosspanning multiple asset classes, all stewarded with fiduciary rigor.",
   },
 ];

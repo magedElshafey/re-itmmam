@@ -17,6 +17,9 @@ import useMainServices from "./api/useMainServices";
 import useAbout from "./api/useAbout";
 // import { About } from "../../types/About";
 import hero from "../../assets/hero-min.webp";
+import { whyUs } from "../../data/data";
+import Title from "../../components/common/title/Title";
+import GrayCard from "../../components/common/cards/GrayCard";
 interface HomeProps {
   email?: string;
   darkLogo?: string;
@@ -78,50 +81,16 @@ const HomePage: React.FC<HomeProps> = ({ email, darkLogo }) => {
         }}
       ></div>
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        {/* {mainServices?.length && (
-          <>
-            <Title title="our main services" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 xl:gap-12 mb-8">
-              {mainServices
-                ?.slice(0, 3)
-                ?.map((item: MainServices, index: number) => (
-                  <MainCard key={index} data={item} index={index} />
-                ))}
+        {whyUs?.length ? (
+          <div className="my-5 md:my-6 lg:my-7 xl:my-8">
+            <Title title="Why Investors Choose Us" />{" "}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+              {whyUs?.map((item, index) => (
+                <GrayCard key={index} index={index} data={item} />
+              ))}
             </div>
-            <div className="w-full flex justify-center mb-8">
-              <Link
-                to="/services"
-                className={`flex items-center justify-center gap-1 bg-white py-3 px-4 rounded-3xl border border-mainColor text-mainColor duration-300 hover:bg-mainColor hover:text-white ${
-                  i18n.language === "ar" ? "text-md lg:text-xl" : ""
-                }`}
-              >
-                <span>{t("View all our services")}</span>
-                <GoArrowUpLeft />
-              </Link>
-            </div>
-          </>
-        )} */}
-        {/* {vission?.length ? <Vission data={vission[0]} /> : null} */}
-        {/* {messages?.length ? (
-          <div className="my-6 md:my-8">
-            <Title title="message" />
-            <Message data={messages} hasDesc={false} />
           </div>
-        ) : null} */}
-        {/* {values?.length ? (
-          <div className="my-6 md:my-8">
-            <Title title="our values" />
-            <Message data={values} hasDesc={true} />
-          </div>
-        ) : null} */}
-        {/* <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">
-          <div className="w-full md:w-1/2">
-            <RegisterInterst email={email} darkLogo={darkLogo} />
-          </div>
-          <div className="w-full md:w-1/2">
-            <Contact />
-          </div>
-        </div> */}
+        ) : null}
       </div>
     </div>
   );
