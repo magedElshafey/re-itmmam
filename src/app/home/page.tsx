@@ -59,11 +59,11 @@ const HomePage: React.FC<HomeProps> = ({ email, darkLogo }) => {
         metaDescreption={data?.sub_description}
         btns={[
           {
-            name: "Register your interest",
+            name: "contact us",
             path: "/contact",
           },
           {
-            name: "Investment opportunities",
+            name: "more",
             path: "/services",
           },
         ]}

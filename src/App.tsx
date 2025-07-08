@@ -19,7 +19,7 @@ import footerBg from "./assets/footer-bg-min.webp";
 import OfflineNetworkPage from "./app/offline/page";
 const Home = lazy(() => import("./app/home/page"));
 const About = lazy(() => import("./app/about/page"));
-// const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
+const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
 const Services = lazy(() => import("./app/services/page"));
 const ServiceDetails = lazy(() => import("./app/services/serviceById/page"));
 const Contact = lazy(() => import("./app/contact/page"));
@@ -29,6 +29,7 @@ const Policy = lazy(() => import("./app/policy/page"));
 const CustomerComplaints = lazy(() => import("./app/customerComplaints/page"));
 const Callus = lazy(() => import("./app/callus/page"));
 const Lists = lazy(() => import("./app/lists/Lists"));
+const Team = lazy(() => import("./app/team/page"));
 const NotFound = lazy(() => import("./app/not-found/page"));
 const App = () => {
   useLocalizeDocumentAttributes();
@@ -74,7 +75,8 @@ const App = () => {
             }
           />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/about/:id" element={<AboutDetails />} /> */}
+          <Route path="/team" element={<Team />} />
+          <Route path="/about/:id" element={<AboutDetails />} />
 
           <Route
             path="/lists"

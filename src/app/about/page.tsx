@@ -8,75 +8,75 @@ import HtmlRenderer from "../../components/common/html/HtmlRender";
 import Head from "../../components/common/meta/Head";
 import { tabTitle } from "../../utils/tabTitle";
 import { useTranslation } from "react-i18next";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import useFetchEmployee from "./api/useFetchEmployee";
-import Title from "../../components/common/title/Title";
-import { Link, useNavigate } from "react-router-dom";
-import useExecutiveManagment from "../home/api/useExecutiveManagment";
-import useShareholders from "../home/api/useShareholders";
-import icon from "../../assets/detailsImg.png";
-interface Employee {
-  id: number;
-  name: string;
-  position: string;
-  image: string;
-  children: {
-    id: number;
-    name: string;
-    position: string;
-    image: string;
-  }[];
-}
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import useFetchEmployee from "./api/useFetchEmployee";
+// import Title from "../../components/common/title/Title";
+// import { Link, useNavigate } from "react-router-dom";
+// import useExecutiveManagment from "../home/api/useExecutiveManagment";
+// import useShareholders from "../home/api/useShareholders";
+// import icon from "../../assets/detailsImg.png";
+// interface Employee {
+//   id: number;
+//   name: string;
+//   position: string;
+//   image: string;
+//   children: {
+//     id: number;
+//     name: string;
+//     position: string;
+//     image: string;
+//   }[];
+// }
 
 const AboutPage = () => {
   const { t, i18n } = useTranslation();
   const { isLoading, data: data } = useAbout();
-  const { isLoading: loadingExecutive, data: executives } =
-    useExecutiveManagment();
-  const { isLoading: loadingShareholders, data: shareholders } =
-    useShareholders();
-  const { isLoading: loadingEmployee, data: employees } = useFetchEmployee();
-  const navigate = useNavigate();
-  const getSliderSettings = (itemsLength: number) => {
-    const isSingleItem = itemsLength <= 1;
+  // const { isLoading: loadingExecutive, data: executives } =
+  //   useExecutiveManagment();
+  // const { isLoading: loadingShareholders, data: shareholders } =
+  //   useShareholders();
+  // const { isLoading: loadingEmployee, data: employees } = useFetchEmployee();
+  // const navigate = useNavigate();
+  // const getSliderSettings = (itemsLength: number) => {
+  //   const isSingleItem = itemsLength <= 1;
 
-    return {
-      dots: false,
-      autoplay: !isSingleItem,
-      autoplaySpeed: 3000,
-      arrows: false,
-      infinite: !isSingleItem,
-      slidesToShow: isSingleItem ? 1 : 4,
-      slidesToScroll: 1,
-      rtl: i18n.language === "ar",
-      initialSlide:
-        i18n.language === "ar" && itemsLength > 0 ? itemsLength - 1 : 0,
-      responsive: [
-        {
-          breakpoint: 1224,
-          settings: {
-            slidesToShow: isSingleItem ? 1 : 4,
-          },
-        },
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: isSingleItem ? 1 : 2,
-          },
-        },
-        {
-          breakpoint: 540,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-      ],
-    };
-  };
+  //   return {
+  //     dots: false,
+  //     autoplay: !isSingleItem,
+  //     autoplaySpeed: 3000,
+  //     arrows: false,
+  //     infinite: !isSingleItem,
+  //     slidesToShow: isSingleItem ? 1 : 4,
+  //     slidesToScroll: 1,
+  //     rtl: i18n.language === "ar",
+  //     initialSlide:
+  //       i18n.language === "ar" && itemsLength > 0 ? itemsLength - 1 : 0,
+  //     responsive: [
+  //       {
+  //         breakpoint: 1224,
+  //         settings: {
+  //           slidesToShow: isSingleItem ? 1 : 4,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 992,
+  //         settings: {
+  //           slidesToShow: isSingleItem ? 1 : 2,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 540,
+  //         settings: {
+  //           slidesToShow: 1,
+  //         },
+  //       },
+  //     ],
+  //   };
+  // };
 
-  if (isLoading || loadingEmployee || loadingExecutive || loadingShareholders) {
+  if (isLoading) {
     return <Loader />;
   }
   const values = data?.filter((item: About) => item?.type === "values") || [];
@@ -94,14 +94,25 @@ const AboutPage = () => {
         description={aboutData?.meta_description || ""}
       />
       <div className="overflow-x-hidden">
-        <Hero image={bg} title={t("about us")} />
+        <Hero
+          image={bg}
+          title={t("about us")}
+          descreption={t("We take your wealth to new frontiers")}
+        />
         {aboutData?.description && (
-          <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6  text-center flex items-center justify-center">
+          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center">
             <HtmlRenderer html={aboutData?.description} />
           </div>
         )}
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full flex-1 bg-[#A56FCC] h-auto md:max-h-[300px] py-4 flex items-center bg-opacity-20">
+        <div className="w-screen overflow-hidden flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 bg-[#A56FCC] bg-opacity-20 my-4 md:my-5 lg:my-6 xl:my-7 2xl:my-8">
+          <div className="w-full md:w-1/3">
+            <img
+              alt="about"
+              src={aboutData?.image || about}
+              className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover"
+            />
+          </div>
+          <div className="w-full flex-1  h-auto md:max-h-[300px] py-4 flex items-center ">
             <div className="container mx-auto px-4 md:px-6 lg:px-8">
               <p
                 className={`font-bold text-xl md:text-2xl lg:text-3xl  mb-2  ${
@@ -131,16 +142,10 @@ const AboutPage = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full md:w-1/3">
-            <img
-              alt="about"
-              src={aboutData?.image || about}
-              className="w-full max-h-[300px]"
-            />
-          </div>
         </div>
+
         <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
-          {shareholders?.length ? (
+          {/* {shareholders?.length ? (
             <>
               <div className="my-4 md:my-6 lg:my-8 xl:my-12">
                 <Title title={t("shareholders")} />
@@ -211,8 +216,8 @@ const AboutPage = () => {
                 </div>
               </div>
             </>
-          ) : null}
-          {employees?.length ? (
+          ) : null} */}
+          {/* {employees?.length ? (
             <>
               <div className="my-4 md:my-6 lg:my-8 xl:my-12">
                 <Title title={t("Functional structure")} />
@@ -277,8 +282,8 @@ const AboutPage = () => {
                 ))}
               </Slider>
             </>
-          ) : null}
-          {executives?.length ? (
+          ) : null} */}
+          {/* {executives?.length ? (
             <>
               <div className="my-4 md:my-6 lg:my-8 xl:my-12">
                 <Title title={t("Executive management")} />
@@ -343,9 +348,9 @@ const AboutPage = () => {
                 ))}
               </Slider>
             </>
-          ) : null}
+          ) : null} */}
 
-          <div className="my-4 md:my-6 lg:my-8 xl:my-12">
+          {/* <div className="my-4 md:my-6 lg:my-8 xl:my-12">
             <Title title={t("Organizational structure")} />
           </div>
           <div className="w-full mt-4 md:mt-6 lg:mt-8 md:w-[80%] mx-auto">
@@ -355,7 +360,7 @@ const AboutPage = () => {
               src={aboutData?.org_structure}
               loading="lazy"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
