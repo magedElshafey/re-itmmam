@@ -11,7 +11,7 @@ export default {
         purpleColor: "#A56FCC",
         mainColor: "#3D2571",
         whiteColor: "#FFFFFF",
-        darkMainColor: "#000C40",
+        darkMainColor: "#000d3f",
         darkPurpleColor: "#994ECC",
         babyBlueColor: "#00F9FF",
       },
