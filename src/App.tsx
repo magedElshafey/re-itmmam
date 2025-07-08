@@ -65,15 +65,7 @@ const App = () => {
           darkLogo={data?.logo_dark || darkLogo}
         />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                email={data?.email}
-                darkLogo={data?.logo_dark || darkLogo}
-              />
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/about/:id" element={<AboutDetails />} />
