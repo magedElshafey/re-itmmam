@@ -121,3 +121,12 @@ export const ourMandate: {
       "Disciplined, research investment process while being cognizant of risks for managing  portfoliosspanning multiple asset classes, all stewarded with fiduciary rigor.",
   },
 ];
+export const journey = {
+  title: "Your Journey with Itmam Invest",
+  details: [
+    "Design a bespoke portfolio built on rigorous quantitative and Sharia-compliant frameworks",
+    "Design a bespoke portfolio built on rigorous quantitative and Sharia-compliant frameworks",
+    "Design a bespoke portfolio built on rigorous quantitative and Sharia-compliant frameworks",
+    "Design a bespoke portfolio built on rigorous quantitative and Sharia-compliant frameworks",
+  ],
+};
