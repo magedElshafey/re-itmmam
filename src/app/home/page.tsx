@@ -92,7 +92,7 @@ const HomePage = () => {
             </div>
           </div>
         ) : null}
-        <div className="w-full bg-[#00F9FF] bg-opacity-10 flex items-center flex-col md:flex-row gap-4">
+        <div className="w-full bg-[#00F9FF] bg-opacity-[8%] flex items-center flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
             <img
               alt="home-image"

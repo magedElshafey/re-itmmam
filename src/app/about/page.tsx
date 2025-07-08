@@ -76,7 +76,7 @@ const AboutPage = () => {
             </div>
           ) : null}
           {/**mission and vission */}
-          <div className="bg-[#00F9FF] py-4 px-8 bg-opacity-10">
+          <div className="bg-[#00F9FF] py-4 px-8 bg-opacity-[8%]">
             <div className="flex items-center flex-col md:flex-row gap-4 md:gap-5 lg:gap-6 mb-5">
               <div className="flex flex-col items-center gap-2">
                 <img
