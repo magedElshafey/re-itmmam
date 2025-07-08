@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Bahij Insan";
+    src: url("/assets/fonts/ar/Bahij-Insan-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bahij Insan";
+    src: url("/assets/fonts/ar/Bahij_Insan-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gucina";
+    src: url("/assets/fonts/en/gucina-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gucina";
+    src: url("/assets/fonts/en/gucina-medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gucina";
+    src: url("/assets/fonts/en/gucina-semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Gucina";
+    src: url("/assets/fonts/en/gucina-bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer utilities {
+    .transform-style-3d {
+        transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+        backface-visibility: hidden;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --babyBlueColor: #00F9FF;
+    --mainColor: #3D2571;
+}
+
+body {
+    overflow-x: hidden;
+    text-transform: capitalize;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* default classes */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.125rem;
+}
+
+h2 {
+    font-size: 1.875rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h3 {
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h4 {
+        font-size: 1.125rem;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    h5 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h6 {
+        font-size: 0.875rem;
+    }
+}
+
+a.active {
+    color: var(--babyBlueColor) !important;
+    text-decoration: underline;
+}
+
+a.active a {
+    color: black !important;
+}
+
+a.active:has(a.active) {
+    font-weight: bold;
+    color: var(--mainColor) !important;
+    text-decoration: underline;
+}
+
+.main {
+    min-height: calc(100vh - 338px);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        min-height: calc(100vh - 540px);
+    }
+
+}
+
+.colorful {
+    width: 24.6px;
+    height: 24.6px;
+    border-radius: 50%;
+    background: #3d2571;
+    animation: colorful-o7soaomd 1.5s infinite linear;
+}
+
+@keyframes colorful-o7soaomd {
+    0% {
+        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, 0 0 #a56fcc,
+            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+    }
+
+    12.5% {
+        box-shadow: 0 0 #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+    }
+
+    25% {
+        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 33.6px 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 33.6px #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+    }
+
+    37.5% {
+        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 33.6px #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+    }
+
+    50% {
+        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
+            0 33.6px #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 #00f9ff, 0 0 #a56fcc;
+    }
+
+    62.5% {
+        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
+            0 0 #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+    }
+
+    75% {
+        box-shadow: 0 -33.6px #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
+            0 0 #00f9ff, 0 0 #a56fcc, -33.6px 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+    }
+
+    87.5% {
+        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
+            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+    }
+
+    100% {
+        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, 0 0 #a56fcc,
+            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+    }
+}
+
+.element {
+    transform: translateX(0);
+    will-change: transform;
+}
