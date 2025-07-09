@@ -3,7 +3,7 @@ import { tabTitle } from "../../utils/tabTitle";
 import Hero from "../../components/common/hero/Hero";
 import { useTranslation } from "react-i18next";
 import hero from "../../assets/assets-min.webp";
-import LocationImage from "../../assets/map.jpg";
+import LocationImage from "../../assets/map.jfif";
 import ContactUsForm from "./components/contact-us-form";
 import useSettings from "../../hooks/api/useSettings";
 import Loader from "../../components/common/loader/Loader";
@@ -23,7 +23,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
       <Head title={tabTitle(t("contact us"))} />
       <Hero title="contact us" image={hero} />
       <div className="py-10 grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-10 lg:gap-x-20 px-4 md:px-10 lg:px-20 xl:px-40">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col">
           <h1>Contact Us</h1>
           <p>
             <a
@@ -70,12 +70,20 @@ const CallusPage: React.FC<CallusPageProps> = () => {
         </div>
         <div className="flex flex-col gap-2">
           <h1>address details</h1>
-          <div dangerouslySetInnerHTML={{ __html: settings?.address || "" }} />
+          <div
+            style={{
+              fontSize: "18px",
+            }}
+          >
+            <div
+              dangerouslySetInnerHTML={{ __html: settings?.address || "" }}
+            />
+          </div>
         </div>
         <ContactUsForm />
         <img
           src={LocationImage}
-          className="object-cover object-center max-h-[450px]"
+          className="w-full md:w-3/4 object-cover  max-h-[450px] rounded-md shadow-md"
         />
       </div>
     </>

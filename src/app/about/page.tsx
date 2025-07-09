@@ -57,7 +57,7 @@ const AboutPage = () => {
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
-              <p className="w-full   mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
+              <p className="w-full lg:text-md 2xl:text-xl   mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
                 Under our CMA license we are empowered to deliver three
                 complementary, fully regulated services:
               </p>
@@ -139,7 +139,7 @@ const AboutPage = () => {
                   i18n.language === "ar" ? "xl:text-5xl" : "xl:text-4xl"
                 }`}
               >
-                {t("our main values")}
+                {t("core values")}
               </p>
               <ul>
                 {values?.map((item, index) => (
