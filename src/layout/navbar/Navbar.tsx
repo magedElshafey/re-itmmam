@@ -6,7 +6,7 @@ import Sidebar from "../sidebar/Sidebar";
 import CallToAction from "../callToAction/CallToAction";
 import MainLinks from "../common/mainLinks/MainLinks";
 import SidebarBtn from "./components/sidebarBtn/SidebarBtn";
-import LangBtn from "./components/langBtn/LangBtn";
+// import LangBtn from "./components/langBtn/LangBtn";
 
 interface NavbarProps {
   facebook?: string;
@@ -29,9 +29,9 @@ const Navbar: React.FC<NavbarProps> = ({
   darkLogo,
 }) => {
   const {
-    states: { showSidebar, scrolling, language },
+    states: { showSidebar, scrolling },
     refs: { sidebarRef },
-    handlers: { setShowSidebar, handleShowSidebar, changeLanguageHandler },
+    handlers: { setShowSidebar, handleShowSidebar },
   } = useNavbarLogic();
   return (
     <>
@@ -60,11 +60,11 @@ const Navbar: React.FC<NavbarProps> = ({
                 scrolling={scrolling}
                 handleShowSidebar={handleShowSidebar}
               />
-              <LangBtn
+              {/* <LangBtn
                 changeLanguageHandler={changeLanguageHandler}
                 language={language}
                 scrolling={scrolling}
-              />
+              /> */}
             </div>
           </div>
         </div>
