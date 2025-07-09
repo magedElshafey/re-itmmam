@@ -26,6 +26,7 @@
   "name field is required": "name field is required",
   "phone field is required": "phone field is required",
   "email field is required": "email field is required",
+  "email is invalid": "email is invalid",
   "message field is required": "message field is required",
   "Learn about all our services": "Learn about all our services",
   "Contact us today to explore how our company can help you achieve your financial goals and achieve sustainable growth in investments": "Contact us today to explore how our company can help you achieve your financial goals and achieve sustainable growth in investments",

@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import hero from "../../assets/assets-min.webp";
 import LocationImage from "../../assets/location-map.png";
 import ContactUsForm from "./components/contact-us-form";
+import useSettings from "../../hooks/api/useSettings";
+import Loader from "../../components/common/loader/Loader";
 interface CallusPageProps {
   phone1?: string;
   phone2?: string;
@@ -13,17 +15,14 @@ interface CallusPageProps {
 }
 const CallusPage: React.FC<CallusPageProps> = () => {
   const { t } = useTranslation();
-  // const {
-  //   states: { name, phone, email: emailInput, message },
-  //   handlers: {
-  //     handleNameChange,
-  //     handlePhoneChange,
-  //     handleEmailChange,
-  //     handleMessageChnage,
-  //     handleSubmit,
-  //   },
-  //   isPending,
-  // } = useCallusLogic();
+
+  const { 
+    data: settings,
+    isLoading
+  } = useSettings();
+
+  if(isLoading) return <Loader />
+
   return (
     <>
       <Head title={tabTitle(t("contact us"))} />
@@ -32,32 +31,23 @@ const CallusPage: React.FC<CallusPageProps> = () => {
         <div className="flex flex-col gap-2">
           <h1>Contact Us</h1>
           <p>
-            +96611405990
+            {settings?.phone}
           </p>
           <p>
-            +966114059980
+            {settings?.phone2}
           </p>
           <p>
-            Info@itmaminvest.com
+            {settings?.support_email}
           </p>
           <p>
-            Complaint@itmaminvest.com
+            {settings?.email}
           </p>
         </div>
         <div className="flex flex-col gap-2">
         <h1>address details</h1>
-          <p>
-          Riyadh 12281 - 2793
-          </p>
-          <p>
-          Al Muroo
-          </p>
-          <p>
-          Radin Commercial Center 6227 Olaya Street
-          </p>
-          <p>
-          First floor
-          </p>
+        <div 
+          dangerouslySetInnerHTML={{__html: settings?.address || ""}}
+        />
         </div>
         <ContactUsForm />
         <img 
