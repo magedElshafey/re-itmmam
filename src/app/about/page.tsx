@@ -57,7 +57,7 @@ const AboutPage = () => {
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
-              <p className="w-full md:w-1/2  mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
+              <p className="w-full   mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
                 Under our CMA license we are empowered to deliver three
                 complementary, fully regulated services:
               </p>

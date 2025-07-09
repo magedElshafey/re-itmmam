@@ -3,7 +3,7 @@ import { tabTitle } from "../../utils/tabTitle";
 import Hero from "../../components/common/hero/Hero";
 import { useTranslation } from "react-i18next";
 import hero from "../../assets/assets-min.webp";
-import LocationImage from "../../assets/map.jfif";
+import LocationImage from "../../assets/map.jpg";
 import ContactUsForm from "./components/contact-us-form";
 import useSettings from "../../hooks/api/useSettings";
 import Loader from "../../components/common/loader/Loader";
@@ -75,7 +75,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
         <ContactUsForm />
         <img
           src={LocationImage}
-          className="object-cover object-center max-h-[550px]"
+          className="object-cover object-center max-h-[450px]"
         />
       </div>
     </>

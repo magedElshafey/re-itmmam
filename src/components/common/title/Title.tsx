@@ -16,7 +16,7 @@ const Title: React.FC<TitleProps> = ({ title }) => {
         ease: "easeOut",
         bounce: 0.2,
       }}
-      className={`text-center font-black mb-6  ${
+      className={`text-center font-black mb-4  ${
         i18n.language === "ar"
           ? "text-xl md:text-2xl lg:text-3xl xl:text-5xl"
           : "text-md md:text-lg lg:text-xl xl:text-2xl"
