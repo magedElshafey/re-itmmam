@@ -2,9 +2,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import CallToAction from "../callToAction/CallToAction";
 import Social from "../../components/common/social/Social";
-import { ServiceWithChild } from "../../types/ServiceWithChild";
 import MainLinks from "../common/mainLinks/MainLinks";
-import ServicesLinks from "../common/services/ServicesLinks";
 interface SidebarProps {
   showSidebar: boolean;
   setShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,7 +13,6 @@ interface SidebarProps {
   tiktok?: string;
   whatsapp?: string;
   x?: string;
-  services?: ServiceWithChild[];
 }
 const Sidebar: React.FC<SidebarProps> = ({
   showSidebar,
@@ -27,7 +24,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   tiktok,
   whatsapp,
   x,
-  services,
 }) => {
   const { t } = useTranslation();
   return (
@@ -35,8 +31,8 @@ const Sidebar: React.FC<SidebarProps> = ({
       ref={sidebarRef}
       className={`w-[90%] min-
         h-screen overflow-y-scroll py-3 px-6 bg-custom-gradient duration-300 fixed top-0 z-[1000] lg:hidden ${
-        showSidebar ? "left-0" : "left-[-400%]"
-      }`}
+          showSidebar ? "left-0" : "left-[-400%]"
+        }`}
     >
       <div>
         <button onClick={() => setShowSidebar(false)}>
@@ -45,7 +41,6 @@ const Sidebar: React.FC<SidebarProps> = ({
       </div>
       <ul>
         <MainLinks setShowSidebar={setShowSidebar} />
-       <ServicesLinks services={services} setShowSidebar={setShowSidebar} /> 
       </ul>
       <div className="my-5">
         <CallToAction

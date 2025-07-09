@@ -4,7 +4,6 @@ import { useClickOutside } from "../../../hooks/common/ui/useClickOutside";
 const useNavbarLogic = () => {
   // states
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
-  const [activeDropDown, setActiveDropDown] = useState<number | null>(null);
   const [scrolling, setScrolling] = useState<boolean>(false);
   const { language, changeLanguage } = useLanguage();
   const handleCloseSidebar = () => {
@@ -34,14 +33,12 @@ const useNavbarLogic = () => {
   return {
     states: {
       showSidebar,
-      activeDropDown,
       scrolling,
       language,
     },
     refs: { sidebarRef },
     handlers: {
       setShowSidebar,
-      setActiveDropDown,
       handleShowSidebar,
       changeLanguageHandler,
     },

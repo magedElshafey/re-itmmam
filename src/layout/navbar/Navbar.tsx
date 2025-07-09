@@ -7,8 +7,6 @@ import CallToAction from "../callToAction/CallToAction";
 import MainLinks from "../common/mainLinks/MainLinks";
 import SidebarBtn from "./components/sidebarBtn/SidebarBtn";
 import LangBtn from "./components/langBtn/LangBtn";
-// types
-import { ServiceWithChild } from "../../types/ServiceWithChild";
 
 interface NavbarProps {
   facebook?: string;
@@ -17,7 +15,6 @@ interface NavbarProps {
   tiktok?: string;
   whatsapp?: string;
   x?: string;
-  services?: ServiceWithChild[];
   whiteLogo: string;
   darkLogo: string;
 }
@@ -28,19 +25,13 @@ const Navbar: React.FC<NavbarProps> = ({
   tiktok,
   whatsapp,
   x,
-  services,
   whiteLogo,
   darkLogo,
 }) => {
   const {
-    states: { showSidebar, activeDropDown, scrolling, language },
+    states: { showSidebar, scrolling, language },
     refs: { sidebarRef },
-    handlers: {
-      setShowSidebar,
-      setActiveDropDown,
-      handleShowSidebar,
-      changeLanguageHandler,
-    },
+    handlers: { setShowSidebar, handleShowSidebar, changeLanguageHandler },
   } = useNavbarLogic();
   return (
     <>
@@ -88,7 +79,6 @@ const Navbar: React.FC<NavbarProps> = ({
         tiktok={tiktok}
         whatsapp={whatsapp}
         x={x}
-        services={services}
       />
     </>
   );
