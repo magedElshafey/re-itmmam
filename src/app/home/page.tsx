@@ -20,7 +20,7 @@ const HomePage = () => {
     isLoading: loadingHomePage,
     data: homePage,
   } = useHomePage();
-
+  console.log("homePage", homePage);
   if (isLoading || loadingWhyUs || loadingHomePage) {
     return <Loader />;
   }
@@ -50,22 +50,14 @@ const HomePage = () => {
           },
         ]}
       />
-      {/* <div
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "110px",
-        }}
-      ></div> */}
+
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         {whyUsData?.length ? (
           <div className="my-5 md:my-6 lg:my-7 xl:my-8">
             <Title title="Why Investors Choose Us" />{" "}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {whyUsData?.map((item: any, index: number) => (
-                <GrayCard key={index} index={index} data={item} />
+                <GrayCard key={index} data={item} />
               ))}
             </div>
           </div>
