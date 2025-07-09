@@ -20,12 +20,19 @@ const Services = () => {
 
   const {
     query: {
-      data: servicesFooter,
+      data: investments,
+      isLoading: investmentsLoading
+    }
+  } = useNewServices("itmam_invest");
+
+  const {
+    query: {
+      data: footer,
       isLoading: footerLoading
     }
   } = useNewServices("range_service_footer");
 
-  const isLoading = servicesLoading || footerLoading;
+  const isLoading = servicesLoading || investmentsLoading || footerLoading;
   
   if (isLoading) {
     return <Loader />;
@@ -57,9 +64,9 @@ const Services = () => {
         />
         <div className="grid gap-4 grid-cols-[repeat(3,minmax(250px,1fr))]">
             {
-              (servicesFooter || []).map((card, index) => (
+              (investments || []).map((card, index) => (
                 <div 
-                  className={`flex justify-center overflow-hidden text-center px-2 py-1 bg-opacity-30 font-bold text-xl items-center bg-no-repeat bg-center bg-cover rounded-lg relative h-[400px] flex-shrink-0`}
+                  className={`flex justify-center overflow-hidden text-center px-2 py-1 font-bold text-xl items-center bg-no-repeat bg-center bg-cover rounded-lg relative h-[400px] flex-shrink-0`}
                   key={index}
                 >
                   <p className="text-7xl font-bold absolute w-fit opacity-80 text-mainColor top-10 left-8">
@@ -69,13 +76,17 @@ const Services = () => {
                     src={card.image}
                     className="absolute opacity-70 z-0 w-full h-full object-cover object-center"
                   />
-                  <div 
+                <div 
+                    className="z-10 text-black/70"
                     dangerouslySetInnerHTML={{ __html: card.description }}
                   />
                 </div>
               ))
             }
         </div>
+        <div 
+          dangerouslySetInnerHTML={{__html: footer?.[0].description || ""}}
+        />
       </div>
     </>
   );
