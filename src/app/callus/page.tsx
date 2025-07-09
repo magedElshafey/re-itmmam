@@ -16,12 +16,9 @@ interface CallusPageProps {
 const CallusPage: React.FC<CallusPageProps> = () => {
   const { t } = useTranslation();
 
-  const { 
-    data: settings,
-    isLoading
-  } = useSettings();
+  const { data: settings, isLoading } = useSettings();
 
-  if(isLoading) return <Loader />
+  if (isLoading) return <Loader />;
 
   return (
     <>
@@ -31,29 +28,54 @@ const CallusPage: React.FC<CallusPageProps> = () => {
         <div className="flex flex-col gap-2">
           <h1>Contact Us</h1>
           <p>
-            {settings?.phone}
+            <a
+              dir="ltr"
+              href={`https://wa.me/${settings?.phone}`}
+              target="_blank"
+              rel="noreferrer"
+              className="duration-300 hover:underline"
+            >
+              {settings?.phone}
+            </a>
           </p>
           <p>
-            {settings?.phone2}
+            <a
+              dir="ltr"
+              href={`https://wa.me/${settings?.phone2}`}
+              target="_blank"
+              rel="noreferrer"
+              className="duration-300 hover:underline"
+            >
+              {settings?.phone2}
+            </a>
           </p>
           <p>
-            {settings?.support_email}
+            <a
+              href={`mailto:${settings?.support_email}`}
+              target="_blank"
+              rel="noreferrer"
+              className="duration-300 hover:underline lowercase"
+            >
+              {settings?.support_email}
+            </a>
           </p>
           <p>
-            {settings?.email}
+            <a
+              href={`mailto:${settings?.email}`}
+              target="_blank"
+              rel="noreferrer"
+              className="duration-300 hover:underline lowercase"
+            >
+              {settings?.email}
+            </a>
           </p>
         </div>
         <div className="flex flex-col gap-2">
-        <h1>address details</h1>
-        <div 
-          dangerouslySetInnerHTML={{__html: settings?.address || ""}}
-        />
+          <h1>address details</h1>
+          <div dangerouslySetInnerHTML={{ __html: settings?.address || "" }} />
         </div>
         <ContactUsForm />
-        <img 
-          src={LocationImage}
-          className="object-cover object-center"
-        />
+        <img src={LocationImage} className="object-cover object-center" />
       </div>
     </>
   );

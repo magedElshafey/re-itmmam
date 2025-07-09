@@ -31,11 +31,12 @@ const ContactInput: React.FC<ContactInputProps> = ({
   className = "",
   autoComplete,
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="w-full">
       <input
+        dir={i18n.language === "ar" ? "rtl" : "ltr"}
         id={id}
         name={name}
         type={type}
@@ -63,13 +64,15 @@ const ContactInput: React.FC<ContactInputProps> = ({
           focus:ring-blue-200
           disabled:bg-gray-100 
           disabled:cursor-not-allowed
-          ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : ''}
+          ${
+            error
+              ? "border-red-500 focus:border-red-500 focus:ring-red-200"
+              : ""
+          }
           ${className}
         `.trim()}
       />
-      {error && (
-        <p className="text-red-500 text-xs mt-1 ml-1">{error}</p>
-      )}
+      {error && <p className="text-red-500 text-xs mt-1 ml-1">{error}</p>}
     </div>
   );
 };

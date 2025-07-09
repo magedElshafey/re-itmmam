@@ -70,66 +70,65 @@ const ContactUsForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Message</h3>
-            
-            <ContactInput 
-                placeholder="Full Name"
-                type="text"
-                name="name"
-                autoComplete="name"
-                value={formState.name}
-                onChange={(e) => handleChange("name", e.target.value)}
-                error={errors.name}
-            />
-            
-            <ContactInput 
-                placeholder="Email Address"
-                type="text"
-                name="email"
-                autoComplete="email"
-                value={formState.email}
-                onChange={(e) => handleChange("email", e.target.value)}
-                error={errors.email}
-            />
-            
-            <ContactInput 
-                placeholder="Phone Number"
-                type="tel"
-                name="phone"
-                autoComplete="tel"
-                value={formState.phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
-                error={errors.phone}
-            />
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Message</h3>
 
-            <ContactInput 
-                placeholder="Message title"
-                type="text"
-                name="message-title"
-                value={formState.subject}
-                onChange={(e) => handleChange("subject", e.target.value)}
-                error={errors.subject}
-            />
+        <ContactInput
+          placeholder="Full Name"
+          type="text"
+          name="name"
+          autoComplete="name"
+          value={formState.name}
+          onChange={(e) => handleChange("name", e.target.value)}
+          error={errors.name}
+        />
 
-            <ContactTextArea 
-                placeholder="Message content"
-                name="message-content"
-                rows={4}
-                value={formState.message}
-                onChange={(e) => handleChange("message", e.target.value)}
-                error={errors.message}
-            />
+        <ContactInput
+          placeholder="Email Address"
+          type="text"
+          name="email"
+          autoComplete="email"
+          value={formState.email}
+          onChange={(e) => handleChange("email", e.target.value)}
+          error={errors.email}
+        />
 
-            <div className="mt-4">
-                {
-                    isPending ? 
-                    <FiCommand className="animate-spin text-mainColor" />
-                    :
-                    <SendButton />
-                }
-            </div>
-        </form>
+        <ContactInput
+          placeholder="Phone Number"
+          type="tel"
+          name="phone"
+          autoComplete="tel"
+          value={formState.phone}
+          onChange={(e) => handleChange("phone", e.target.value)}
+          error={errors.phone}
+        />
+
+        <ContactInput
+          placeholder="Message title"
+          type="text"
+          name="message-title"
+          value={formState.subject}
+          onChange={(e) => handleChange("subject", e.target.value)}
+          error={errors.subject}
+        />
+
+        <ContactTextArea
+          placeholder="Message content"
+          name="message-content"
+          rows={4}
+          value={formState.message}
+          onChange={(e) => handleChange("message", e.target.value)}
+          error={errors.message}
+        />
+
+        <div className="mt-4">
+          {isPending ? (
+            <FiCommand className="animate-spin text-mainColor" />
+          ) : (
+            <SendButton />
+          )}
+        </div>
+      </form>
     );
 }
 
