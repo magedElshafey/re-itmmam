@@ -112,6 +112,7 @@ const Footer: React.FC<FooterProps> = ({
                       href={`https://wa.me/${phone1}`}
                       target="_blank"
                       rel="noreferrer"
+                      className="duration-300 hover:underline"
                     >
                       {phone1}
                     </a>
@@ -122,6 +123,7 @@ const Footer: React.FC<FooterProps> = ({
                       href={`https://wa.me/${phone2}`}
                       target="_blank"
                       rel="noreferrer"
+                      className="duration-300 hover:underline"
                     >
                       {phone2}
                     </a>
@@ -131,7 +133,7 @@ const Footer: React.FC<FooterProps> = ({
                       href={`mailto:${email}`}
                       target="_blank"
                       rel="noreferrer"
-                      className=" lowercase"
+                      className="duration-300 hover:underline lowercase"
                     >
                       {email}
                     </a>
@@ -141,7 +143,7 @@ const Footer: React.FC<FooterProps> = ({
                       href={`mailto:${support_email}`}
                       target="_blank"
                       rel="noreferrer"
-                      className=" lowercase"
+                      className="duration-300 hover:underline lowercase"
                     >
                       {support_email}
                     </a>

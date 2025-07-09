@@ -42,7 +42,7 @@ const HomePage = () => {
         btns={[
           {
             name: "contact us",
-            path: "/contact",
+            path: "/call-us",
           },
           {
             name: "more",
@@ -62,20 +62,29 @@ const HomePage = () => {
             </div>
           </div>
         ) : null}
-        <div className="w-full bg-[#00F9FF] bg-opacity-[8%] flex items-center flex-col md:flex-row gap-4">
-          <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5">
+        <div className="w-full bg-[#00F9FF] bg-opacity-[8%] flex items-center flex-col lg:flex-row gap-4 mb-5 md:mb-6 lg:mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 xl:w-[30%]">
             <img
               alt={homePage[0]?.title}
               src={homePage[0]?.image}
               className="w-full object-cover rounded-md h-[300px]"
             />
           </div>
-          <div className="flex-1">
-            <p className="text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold mb-4">
+          <div className="flex-1 py-4">
+            <p className="text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl font-bold mb-3">
               {homePage[0]?.title}
             </p>
             <HtmlRenderer html={homePage[0]?.description} />
           </div>
+        </div>
+        <div>
+          {homePage[1]?.title ? (
+            <p className="text-base md:text-md lg:text-lg mb-4">
+              {homePage[1]?.title}
+            </p>
+          ) : null}
+
+          <HtmlRenderer html={homePage[1]?.description} />
         </div>
       </div>
     </div>

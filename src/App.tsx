@@ -22,7 +22,7 @@ const About = lazy(() => import("./app/about/page"));
 const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
 const Services = lazy(() => import("./app/services/page"));
 const ServiceDetails = lazy(() => import("./app/services/serviceById/page"));
-const Contact = lazy(() => import("./app/contact/page"));
+// const Contact = lazy(() => import("./app/contact/page"));
 // const Privacy = lazy(() => import("./app/privacy/page"));
 // const Terms = lazy(() => import("./app/terms/page"));
 // const Policy = lazy(() => import("./app/policy/page"));
@@ -80,7 +80,7 @@ const App = () => {
           />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:id/:slug?" element={<ServiceDetails />} />
-          <Route
+          {/* <Route
             path="/contact"
             element={
               <Contact
@@ -88,7 +88,7 @@ const App = () => {
                 darkLogo={data?.logo_dark || darkLogo}
               />
             }
-          />
+          /> */}
           {/* <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<Policy />} /> */}

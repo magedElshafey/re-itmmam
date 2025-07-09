@@ -47,7 +47,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           }}
           className="mb-3"
         >
-          <Link to="/contact">{t("contact us")}</Link>
+          <Link to="/call-us">{t("contact us")}</Link>
         </li>
         <li
           onClick={() => {

@@ -35,7 +35,7 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
-  console.log("partnerWithInvest", partnerWithInvest);
+  console.log("regural", regural);
   return (
     <>
       <Head
@@ -49,11 +49,11 @@ const AboutPage = () => {
           descreption={t("We take your wealth to new frontiers")}
         />
         {aboutData?.description && (
-          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center">
+          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center mt-4 md:mt-5 lg:mt-6 xl:mt-7">
             <HtmlRenderer html={aboutData?.description} />
           </div>
         )}
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
+        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-5 lg:my-6 xl:my-7">
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
@@ -63,13 +63,16 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
                 {regural?.map((item: any, index: number) => (
-                  <div key={index} className="rounded-md">
+                  <div
+                    key={index}
+                    className="rounded-xl bg-[#C49FE0] bg-opacity-10"
+                  >
                     <img
                       alt={item?.title}
-                      src={item?.image}
-                      className="w-full h-[338px] rounded-md object-cover"
+                      src={item?.image || about}
+                      className="w-full h-[300px] rounded-xl object-cover"
                     />
-                    <div className="px-4 mt-5">
+                    <div className="pb-4 px-7 mt-5">
                       <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-3">
                         {item?.title}
                       </p>
@@ -89,9 +92,9 @@ const AboutPage = () => {
                 <img
                   alt="vissio"
                   src={vissionImg}
-                  className="w-[80px] h-[80px] object-contain"
+                  className="w-[60px] h-[60px] object-contain"
                 />
-                <p className="text-base lg:text-md xl:text-xl 2xl:text-3xl font-bold">
+                <p className="text-base lg:text-md xl:text-xl  font-bold">
                   {t("vission")}
                 </p>
               </div>
@@ -106,9 +109,9 @@ const AboutPage = () => {
                 <img
                   alt="vissio"
                   src={missionImg}
-                  className="w-[80px] h-[80px] object-contain"
+                  className="w-[60px] h-[60px] object-contain"
                 />
-                <p className="text-base lg:text-md xl:text-xl 2xl:text-3xl font-bold">
+                <p className="text-base lg:text-md xl:text-xl  font-bold">
                   {t("our mission")}
                 </p>
               </div>
