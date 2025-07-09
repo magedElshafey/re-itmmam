@@ -65,7 +65,7 @@ const HomePage = () => {
             <Title title="Why Investors Choose Us" />{" "}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {whyUsData?.map((item: any, index: number) => (
-                <GrayCard key={index} index={index} data={item} />
+                <GrayCard key={index} data={item} />
               ))}
             </div>
           </div>

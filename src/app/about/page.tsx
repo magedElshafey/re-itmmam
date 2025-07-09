@@ -9,18 +9,20 @@ import Head from "../../components/common/meta/Head";
 import { tabTitle } from "../../utils/tabTitle";
 import { useTranslation } from "react-i18next";
 import Title from "../../components/common/title/Title";
-import { aboutSuuport } from "../../data/data";
 import GrayCard from "../../components/common/cards/GrayCard";
 import vissionImg from "../../assets/vission.png";
 import missionImg from "../../assets/mission.png";
 import useRgulatoryMandate from "./api/useRgulatoryMandate ";
-import useWhyUs from "../home/api/useWhyUs";
+import useSetUsApart from "./api/useSetUsApart";
+import usePartnetWithInvest from "./api/usePartnetWithInvest";
 const AboutPage = () => {
   const { t, i18n } = useTranslation();
   const { isLoading, data: data } = useAbout();
   const { isLoading: loadingRegural, data: regural } = useRgulatoryMandate();
-  const { isLoading: loadingWhyUs, data: whyUsData } = useWhyUs();
-  if (isLoading || loadingRegural || loadingWhyUs) {
+  const { isLoading: loadingWhyUs, data: setUsData } = useSetUsApart();
+  const { isLoading: loadingPartners, data: partnerWithInvest } =
+    usePartnetWithInvest();
+  if (isLoading || loadingRegural || loadingWhyUs || loadingPartners) {
     return <Loader />;
   }
   const values = data?.filter((item: About) => item?.type === "values") || [];
@@ -33,6 +35,7 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
+  console.log("partnerWithInvest", partnerWithInvest);
   return (
     <>
       <Head
@@ -159,32 +162,22 @@ const AboutPage = () => {
         </div>
         <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
           {/* about supports */}
-          {aboutSuuport?.length ? (
+          {setUsData?.length ? (
             <div className="my-5 md:my-6 lg:my-7 xl:my-8">
               <Title title="What Sets Us Apart" />
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                {aboutSuuport?.map((item, index) => (
-                  <GrayCard key={index} index={index} data={item} />
+                {setUsData?.map((item: any, index: number) => (
+                  <GrayCard key={index} data={item} />
                 ))}
               </div>
             </div>
           ) : null}
           {/* partner with itmam */}
           <div>
-            <Title title="Partner with Itmam Invest" />
-            <p className="text-center">
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived not only five
-              centuries, but al of type and scrambled it to make a type specimen
-              book. It has survived not only five centuries, but also the leap
-              into electronic typesetting, remaining essentially unchanged. It
-              was popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum
-            </p>
+            <Title title={partnerWithInvest[0]?.title} />
+            <div className="text-center">
+              <HtmlRenderer html={partnerWithInvest[0].description} />
+            </div>
           </div>
         </div>
       </div>

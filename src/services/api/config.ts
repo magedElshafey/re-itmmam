@@ -18,3 +18,5 @@ export const whyUs = "why_choose_us";
 export const data_entries = "data_entries";
 export const home_page = "home_page";
 export const regulatory_mandate = "regulatory_mandate ";
+export const sets_us_apart = "sets_us_apart ";
+export const partner_with_invest = "partner_with_invest ";
