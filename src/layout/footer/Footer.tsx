@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({
             </div>
             <div>
               <div>
-                <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 md:mb-5">
+                <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl  mb-4 md:mb-5">
                   {t("address details")}
                 </h3>
                 <div className="text-white">

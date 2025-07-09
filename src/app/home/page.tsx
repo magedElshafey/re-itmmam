@@ -20,7 +20,7 @@ const HomePage = () => {
     isLoading: loadingHomePage,
     data: homePage,
   } = useHomePage();
-
+  console.log("homePage", homePage);
   if (isLoading || loadingWhyUs || loadingHomePage) {
     return <Loader />;
   }
@@ -50,15 +50,7 @@ const HomePage = () => {
           },
         ]}
       />
-      {/* <div
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "110px",
-        }}
-      ></div> */}
+
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         {whyUsData?.length ? (
           <div className="my-5 md:my-6 lg:my-7 xl:my-8">
