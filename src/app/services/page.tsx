@@ -29,7 +29,7 @@ const Services = () => {
     <>
       <Head title={tabTitle(t("Services"))} />
       <Hero
-        title={t("all services")}
+        title={t("our range of services")}
         descreption={t("licensed, integrated, Aligned with your Ambition")}
         image={assets}
       />

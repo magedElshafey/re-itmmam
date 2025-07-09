@@ -35,7 +35,6 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
-  console.log("partnerWithInvest", partnerWithInvest);
   return (
     <>
       <Head
@@ -63,13 +62,16 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
                 {regural?.map((item: any, index: number) => (
-                  <div key={index} className="rounded-md">
+                  <div
+                    key={index}
+                    className="rounded-xl bg-[#C49FE0] bg-opacity-10"
+                  >
                     <img
                       alt={item?.title}
                       src={item?.image}
-                      className="w-full h-[338px] rounded-md object-cover"
+                      className="w-full h-[300px] rounded-xl object-cover"
                     />
-                    <div className="px-4 mt-5">
+                    <div className="pb-4 px-7 mt-5">
                       <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-3">
                         {item?.title}
                       </p>
@@ -89,9 +91,9 @@ const AboutPage = () => {
                 <img
                   alt="vissio"
                   src={vissionImg}
-                  className="w-[80px] h-[80px] object-contain"
+                  className="w-[60px] h-[60px] object-contain"
                 />
-                <p className="text-base lg:text-md xl:text-xl 2xl:text-3xl font-bold">
+                <p className="text-base lg:text-md xl:text-xl  font-bold">
                   {t("vission")}
                 </p>
               </div>
@@ -106,9 +108,9 @@ const AboutPage = () => {
                 <img
                   alt="vissio"
                   src={missionImg}
-                  className="w-[80px] h-[80px] object-contain"
+                  className="w-[60px] h-[60px] object-contain"
                 />
-                <p className="text-base lg:text-md xl:text-xl 2xl:text-3xl font-bold">
+                <p className="text-base lg:text-md xl:text-xl  font-bold">
                   {t("our mission")}
                 </p>
               </div>
