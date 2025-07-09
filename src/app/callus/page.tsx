@@ -15,9 +15,7 @@ interface CallusPageProps {
 }
 const CallusPage: React.FC<CallusPageProps> = () => {
   const { t } = useTranslation();
-
   const { data: settings, isLoading } = useSettings();
-
   if (isLoading) return <Loader />;
 
   return (

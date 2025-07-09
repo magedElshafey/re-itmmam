@@ -33,7 +33,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaFacebook size={20} />
+            <FaFacebook size={30} />
           </a>
         </li>
       )}
@@ -45,7 +45,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaInstagram size={20} />
+            <FaInstagram size={30} />
           </a>
         </li>
       )}
@@ -57,7 +57,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaYoutube size={20} />
+            <FaYoutube size={30} />
           </a>
         </li>
       )}
@@ -69,7 +69,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaTiktok size={20} />
+            <FaTiktok size={30} />
           </a>
         </li>
       )}
@@ -81,7 +81,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaWhatsapp size={20} />
+            <FaWhatsapp size={30} />
           </a>
         </li>
       )}
@@ -93,7 +93,7 @@ const Social: React.FC<SocialProps> = ({
             rel="noreferrer"
             className=" duration-300 hover:text-white hover:scale-110"
           >
-            <FaXTwitter size={20} />
+            <FaXTwitter size={30} />
           </a>
         </li>
       )}

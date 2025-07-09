@@ -35,6 +35,7 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
+  console.log("regural", regural);
   return (
     <>
       <Head
@@ -48,11 +49,11 @@ const AboutPage = () => {
           descreption={t("We take your wealth to new frontiers")}
         />
         {aboutData?.description && (
-          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center">
+          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center mt-4 md:mt-5 lg:mt-6 xl:mt-7">
             <HtmlRenderer html={aboutData?.description} />
           </div>
         )}
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
+        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-5 lg:my-6 xl:my-7">
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
@@ -68,7 +69,7 @@ const AboutPage = () => {
                   >
                     <img
                       alt={item?.title}
-                      src={item?.image}
+                      src={item?.image || about}
                       className="w-full h-[300px] rounded-xl object-cover"
                     />
                     <div className="pb-4 px-7 mt-5">
