@@ -5,17 +5,17 @@ import { useTranslation } from "react-i18next";
 import bg from "../../assets/assets-min.webp";
 import useLists from "./api/useLists";
 import { motion } from "framer-motion";
-import Contact from "../../components/home/contact/Contact";
-import RegisterInterst from "../../components/home/RegisterInterst";
+// import Contact from "../../components/home/contact/Contact";
+// import RegisterInterst from "../../components/home/RegisterInterst";
 
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import useDownloadPdf from "./api/useDownloadPdf";
-interface ListsProps {
-  email: string;
-  darkLogo: string;
-}
-const Lists: React.FC<ListsProps> = ({ email, darkLogo }) => {
+// interface ListsProps {
+//   email: string;
+//   darkLogo: string;
+// }
+const Lists = () => {
   const { t } = useTranslation();
   const { data } = useLists();
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
@@ -82,14 +82,14 @@ const Lists: React.FC<ListsProps> = ({ email, darkLogo }) => {
             </div>
           </div>
         ) : null}
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">
+        {/* <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">
           <div className="w-full md:w-1/2">
             <RegisterInterst email={email} darkLogo={darkLogo} />
           </div>
           <div className="w-full md:w-1/2">
             <Contact />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

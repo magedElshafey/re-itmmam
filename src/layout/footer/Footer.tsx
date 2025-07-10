@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import CopyRight from "./components/copyright/CopyRight";
 import HtmlRenderer from "../../components/common/html/HtmlRender";
 import { useNavigate } from "react-router-dom";
+import FooterLinks from "./components/footerLinks/FooterLinks";
 interface FooterProps {
   email?: string;
   location?: string;
@@ -73,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({
         className="relative container mx-auto px-8 md:px-16 lg:px-24 py-8 flex items-center"
       >
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 md:gap-6 lg:gap-8 xl:gap-12 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 xl:gap-12 mb-8">
             <div>
               <img
                 className="h-auto w-[210px] cursor-pointer"
@@ -86,6 +87,9 @@ const Footer: React.FC<FooterProps> = ({
                 </div>
               )}
             </div>
+
+            <FooterLinks />
+
             <div>
               <div>
                 <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl  mb-4 md:mb-5">

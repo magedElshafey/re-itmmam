@@ -23,12 +23,14 @@ const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
 const Services = lazy(() => import("./app/services/page"));
 const ServiceDetails = lazy(() => import("./app/services/serviceById/page"));
 // const Contact = lazy(() => import("./app/contact/page"));
-// const Privacy = lazy(() => import("./app/privacy/page"));
-// const Terms = lazy(() => import("./app/terms/page"));
-// const Policy = lazy(() => import("./app/policy/page"));
+const Privacy = lazy(() => import("./app/privacy/page"));
+const Terms = lazy(() => import("./app/terms/page"));
+const Policy = lazy(() => import("./app/policy/page"));
 const CustomerComplaints = lazy(() => import("./app/customerComplaints/page"));
 const Callus = lazy(() => import("./app/callus/page"));
 const Lists = lazy(() => import("./app/lists/Lists"));
+const Publication = lazy(() => import("./app/publication/page"));
+const Complaints = lazy(() => import("./app/complaints/page"));
 const Team = lazy(() => import("./app/team/page"));
 const NotFound = lazy(() => import("./app/not-found/page"));
 const App = () => {
@@ -69,15 +71,8 @@ const App = () => {
           <Route path="/team" element={<Team />} />
           <Route path="/about/:id" element={<AboutDetails />} />
 
-          <Route
-            path="/lists"
-            element={
-              <Lists
-                email={data?.email || ""}
-                darkLogo={data?.logo_dark || darkLogo}
-              />
-            }
-          />
+          <Route path="/declerations" element={<Lists />} />
+          <Route path="/publication" element={<Publication />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:id/:slug?" element={<ServiceDetails />} />
           {/* <Route
@@ -89,12 +84,12 @@ const App = () => {
               />
             }
           /> */}
-          {/* <Route path="/privacy" element={<Privacy />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="/policy" element={<Policy />} /> */}
+          <Route path="/policy" element={<Policy />} />
           <Route path="/customer-complaints" element={<CustomerComplaints />} />
           <Route
-            path="/call-us"
+            path="/inquires"
             element={
               <Callus
                 phone1={data?.phone}
@@ -103,6 +98,10 @@ const App = () => {
                 logo={data?.logo_dark || darkLogo}
               />
             }
+          />
+          <Route
+            path="/complaints"
+            element={<Complaints darkLogo={data?.logo_dark || darkLogo} />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
