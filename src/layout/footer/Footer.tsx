@@ -165,6 +165,19 @@ const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
           {copyRight && <CopyRight copyRight={copyRight} />}
+          <div className="mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-full flex justify-center text-white">
+            <p>
+              Designed and Developed by{" "}
+              <a
+                href="https://qutell.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold underline"
+              >
+                Qutell Technology
+              </a>
+            </p>
+          </div>
         </div>
       </motion.div>
     </div>
