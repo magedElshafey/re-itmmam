@@ -40,10 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({
           scrolling ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full px-4 lg:px-12 xl:px-30 text-nowrap">
-          <div className="w-full flex items-center justify-between gap-4">
+        <div className="w-full px-4 2xl:px-8   text-nowrap">
+          <div className="w-full flex items-center justify-between lg:justify-start  gap-4 2xl:gap-6">
             <Logo logo={scrolling ? darkLogo : whiteLogo} />
-            <ul className="hidden  lg:flex items-center gap-3">
+            <ul className="hidden flex-1  lg:flex items-center justify-between gap-2 2xl:gap-3">
               <MainLinks scrolling={scrolling} />
             </ul>
             <SidebarBtn
