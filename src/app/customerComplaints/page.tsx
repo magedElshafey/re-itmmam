@@ -27,15 +27,19 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
       />
       <div className="container mx-auto px-8 md:px-16 lg:px-24 my-5 md:my-8">
         {pageData?.description && <HtmlRenderer html={pageData?.description} />}
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 xl:mt-10">
-          <div className="w-full md:w-1/2">
-            <RegisterInterst
-              email="complaint@itmaminvest.com"
-              darkLogo={darkLogo}
-            />
-          </div>
-          <div className="w-full md:w-1/2">
-            <Contact />
+      </div>
+      <div className="w-screen bg-[#F5F5F5]  py-5">
+        <div className="container mx-auto px-8 md:px-16 lg:px-24">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 xl:mt-10">
+            <div className="w-full md:w-1/2">
+              <RegisterInterst
+                email="complaint@itmaminvest.com"
+                darkLogo={darkLogo}
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <Contact />
+            </div>
           </div>
         </div>
       </div>

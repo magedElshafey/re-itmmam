@@ -41,9 +41,9 @@ const Navbar: React.FC<NavbarProps> = ({
         }`}
       >
         <div className="w-full px-4 2xl:px-8   text-nowrap">
-          <div className="w-full flex items-center justify-between lg:justify-start  gap-4 2xl:gap-6">
+          <div className="w-full flex items-center justify-between lg:justify-start  gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-10">
             <Logo logo={scrolling ? darkLogo : whiteLogo} />
-            <ul className="hidden flex-1  lg:flex items-center justify-between gap-2 2xl:gap-3">
+            <ul className="hidden flex-1  lg:flex items-center gap-5 lg:gap-6">
               <MainLinks scrolling={scrolling} />
             </ul>
             <SidebarBtn
