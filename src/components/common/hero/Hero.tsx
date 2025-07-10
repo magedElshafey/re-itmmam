@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
   const { t, i18n } = useTranslation();
   return (
     <div
-      className="w-screen h-[60vh] md:h-[70vh] lg:h-[80vh] bg-cover bg-center relative overflow-hidden"
+      className="w-screen h-[60vh] bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] bg-black bg-opacity-40   flex items-center justify-center">

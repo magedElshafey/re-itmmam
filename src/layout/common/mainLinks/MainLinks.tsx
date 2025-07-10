@@ -44,7 +44,7 @@ const MainLinks: React.FC<MainLinksProps> = ({ scrolling, setShowSidebar }) => {
             >
               <NavLink
                 onClick={(e) => handleClick(e, item)}
-                to={item.list ? "" : item?.link}
+                to={item?.link}
                 className={`duration-300 ${
                   scrolling
                     ? "text-black hover:text-mainColor"

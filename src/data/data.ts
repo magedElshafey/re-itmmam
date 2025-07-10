@@ -52,7 +52,7 @@ export const navLinks: Nav[] = [
       {
         name: "inquires",
         link: "/inquires",
-        id: 51
+        id: 42
       }
     ]
   },
