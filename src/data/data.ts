@@ -46,7 +46,7 @@ export const navLinks: Nav[] = [
     list: [
       {
         name: "complaints",
-        link: "/complaints",
+        link: "/customer-complaints",
         id: 41,
       },
       {

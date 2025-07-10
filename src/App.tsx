@@ -87,7 +87,12 @@ const App = () => {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<Policy />} />
-          <Route path="/customer-complaints" element={<CustomerComplaints />} />
+          <Route
+            path="/customer-complaints"
+            element={
+              <CustomerComplaints darkLogo={data?.logo_dark || darkLogo} />
+            }
+          />
           <Route
             path="/inquires"
             element={
