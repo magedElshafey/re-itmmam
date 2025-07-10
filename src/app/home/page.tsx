@@ -39,16 +39,16 @@ const HomePage = () => {
         title={data?.name || ""}
         descreption={data?.description}
         metaDescreption={data?.sub_description}
-        btns={[
-          {
-            name: "contact us",
-            path: "/call-us",
-          },
-          {
-            name: "more",
-            path: "/services",
-          },
-        ]}
+        // btns={[
+        //   {
+        //     name: "contact us",
+        //     path: "/call-us",
+        //   },
+        //   {
+        //     name: "more",
+        //     path: "/services",
+        //   },
+        // ]}
       />
 
       <div className="container mx-auto px-8 md:px-16 lg:px-24">

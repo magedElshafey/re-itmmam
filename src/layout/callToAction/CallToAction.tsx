@@ -27,7 +27,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   return (
     <button
       onClick={toggleShowModal}
-      className={` relative min-w-[120px] ${
+      className={` relative min-w-[100px] ${
         scrolling ? " bg-darkMainColor text-white" : "bg-white"
       } px-4 py-2 text-nowrap  rounded-3xl flex items-center justify-center gap-2 duration-300 hover:bg-babyBlueColor ${
         i18n.language === "ar" ? "text-base lg:text-md xl:text-lg" : ""

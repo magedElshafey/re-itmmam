@@ -3,7 +3,7 @@ import useNavbarLogic from "./logic/useNavbarLogic";
 // components
 import Logo from "../../components/common/logo/Logo";
 import Sidebar from "../sidebar/Sidebar";
-import CallToAction from "../callToAction/CallToAction";
+// import CallToAction from "../callToAction/CallToAction";
 import MainLinks from "../common/mainLinks/MainLinks";
 import SidebarBtn from "./components/sidebarBtn/SidebarBtn";
 // import LangBtn from "./components/langBtn/LangBtn";
@@ -36,36 +36,29 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <div
-        className={`fixed top-0 left-0 w-full py-4 flex items-center z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-screen py-4 flex items-center z-40 transition-all duration-300 ${
           scrolling ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 xl:px-6   text-nowrap">
-          <div className="flex items-center justify-between gap-2">
+        <div className="container mx-auto px-4  text-nowrap">
+          <div className="w-full  flex items-center justify-between gap-4">
             <Logo logo={scrolling ? darkLogo : whiteLogo} />
-            <ul className="hidden lg:flex items-center gap-4 xl:gap-5">
+            <ul className="hidden  lg:flex items-center gap-3">
               <MainLinks scrolling={scrolling} />
-              {/* <ServicesLinks
-                services={services}
-                activeDropDown={activeDropDown}
-                scrolling={scrolling}
-                setActiveDropDown={setActiveDropDown}
-              /> */}
             </ul>
-            <div className="flex items-center gap-3">
-              <div className="hidden lg:block">
+            <SidebarBtn
+              scrolling={scrolling}
+              handleShowSidebar={handleShowSidebar}
+            />
+            {/* <div className="hidden lg:block">
                 <CallToAction scrolling={scrolling} />
-              </div>
-              <SidebarBtn
-                scrolling={scrolling}
-                handleShowSidebar={handleShowSidebar}
-              />
-              {/* <LangBtn
+              </div> */}
+
+            {/* <LangBtn
                 changeLanguageHandler={changeLanguageHandler}
                 language={language}
                 scrolling={scrolling}
               /> */}
-            </div>
           </div>
         </div>
       </div>

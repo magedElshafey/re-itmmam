@@ -11,10 +11,10 @@ const Logo: React.FC<logoProps> = ({ logo }) => {
     <img
       alt="logo"
       src={logo}
-      className="h-auto w-[120px] cursor-pointer"
+      className="h-auto w-[100px] cursor-pointer"
       onClick={handleClick}
       loading="eager"
-      width={150}
+      width={110}
       height={46}
     />
   );
