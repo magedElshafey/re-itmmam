@@ -56,6 +56,11 @@ export const navLinks: Nav[] = [
       }
     ]
   },
+  {
+    name: "Privacy and policy",
+    link: "/privacy",
+    id: 9
+  }
 ];
 export const footerLinks: Nav[] = [
   {

@@ -23,13 +23,13 @@ const Hero: React.FC<HeroProps> = ({
   image,
   isList = false,
 }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div
       className="w-screen h-[60vh] bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] bg-black bg-opacity-40   flex items-center justify-center">
+      <div className="w-full h-[60vh] bg-black bg-opacity-40   flex items-center justify-center">
         <div className="container mx-auto px-8 md:px-16 lg:px-24  flex flex-col items-center justify-center gap-2">
           {title && (
             <motion.h1

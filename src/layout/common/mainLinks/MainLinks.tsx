@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 import { Nav } from "../../../types/Nav";
 import { navLinks } from "../../../data/data";
 
@@ -11,7 +10,6 @@ interface MainLinksProps {
 
 const MainLinks: React.FC<MainLinksProps> = ({ scrolling, setShowSidebar }) => {
   const { t, i18n } = useTranslation();
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, item?: Nav) => {
     if(item && item.list) { 
@@ -24,14 +22,6 @@ const MainLinks: React.FC<MainLinksProps> = ({ scrolling, setShowSidebar }) => {
     }
   };
 
-  const handleMouseEnter = (id: number) => {
-    setHoveredItem(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
   return (
     <>
       {navLinks && navLinks?.length
@@ -39,8 +29,6 @@ const MainLinks: React.FC<MainLinksProps> = ({ scrolling, setShowSidebar }) => {
             <li 
               key={index}
               className="relative group"
-              onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleMouseLeave}
             >
               <NavLink
                 onClick={(e) => handleClick(e, item)}
