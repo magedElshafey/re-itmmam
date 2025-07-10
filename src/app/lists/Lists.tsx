@@ -11,13 +11,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import useDownloadPdf from "./api/useDownloadPdf";
+import Loader from "../../components/common/loader/Loader";
 // interface ListsProps {
 //   email: string;
 //   darkLogo: string;
 // }
 const Lists = () => {
   const { t } = useTranslation();
-  const { data } = useLists();
+  const { isLoading: loadingData, data } = useLists();
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
   const { isLoading, refetch } = useDownloadPdf(selectedId);
   const handleDownload = async (id: number | string) => {
@@ -29,6 +30,9 @@ const Lists = () => {
       saveAs(blob, `report-${id}.pdf`);
     }
   };
+  if (loadingData) {
+    return <Loader />;
+  }
   return (
     <div>
       <Head title={tabTitle(t("Financial statements"))} />
