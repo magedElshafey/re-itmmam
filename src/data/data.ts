@@ -30,14 +30,14 @@ export const navLinks: Nav[] = [
       {
         name: "declerations",
         link: "/declerations",
-        id: 51
+        id: 51,
       },
       {
         name: "publications",
         link: "publications",
-        id: 52
-      }
-    ]
+        id: 52,
+      },
+    ],
   },
   {
     name: "inquires",
@@ -47,20 +47,20 @@ export const navLinks: Nav[] = [
       {
         name: "complaints",
         link: "/complaints",
-        id: 41
+        id: 41,
       },
       {
         name: "inquires",
         link: "/inquires",
-        id: 42
-      }
-    ]
+        id: 42,
+      },
+    ],
   },
-  {
-    name: "Privacy and policy",
-    link: "/privacy",
-    id: 9
-  }
+  // {
+  //   name: "Privacy and policy",
+  //   link: "/privacy",
+  //   id: 9
+  // }
 ];
 export const footerLinks: Nav[] = [
   {
