@@ -24,12 +24,12 @@ export const navLinks: Nav[] = [
   },
   {
     name: "declerations and publication",
-    link: "/lists",
+    link: "/declerations",
     id: 5,
   },
   {
     name: "inquires and complaints",
-    link: "/call-us",
+    link: "/inquires",
     id: 4,
   },
 ];

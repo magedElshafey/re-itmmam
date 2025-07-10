@@ -3,7 +3,7 @@ import { tabTitle } from "../../utils/tabTitle";
 import Hero from "../../components/common/hero/Hero";
 import { useTranslation } from "react-i18next";
 import hero from "../../assets/assets-min.webp";
-import LocationImage from "../../assets/map.jfif";
+// import LocationImage from "../../assets/map.jfif";
 import ContactUsForm from "./components/contact-us-form";
 import useSettings from "../../hooks/api/useSettings";
 import Loader from "../../components/common/loader/Loader";
@@ -17,6 +17,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
   const { t } = useTranslation();
   const { data: settings, isLoading } = useSettings();
   if (isLoading) return <Loader />;
+  console.log("settings data is", settings);
 
   return (
     <>
@@ -81,10 +82,22 @@ const CallusPage: React.FC<CallusPageProps> = () => {
           </div>
         </div>
         <ContactUsForm />
-        <img
+        {/* <img
           src={LocationImage}
           className="w-full md:w-3/4 object-cover  max-h-[450px] rounded-md shadow-md"
-        />
+        /> */}
+        {settings?.embed_map ? (
+          <div className="w-full md:w-3/4 max-h-[450px] rounded-md shadow-md">
+            <iframe
+              src={settings?.embed_map}
+              width="100%"
+              height="100%"
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        ) : null}
       </div>
     </>
   );

@@ -9,15 +9,9 @@ const FooterLinks = () => {
     <>
       {footerLinks?.map((item: Nav, index: number) => (
         <div key={index}>
-          <h5
-            className={`text-white mb-4 ${
-              i18n.language === "ar"
-                ? "text-md md:text-lg lg:text-xl xl:text-2xl"
-                : ""
-            }`}
-          >
+          <h3 className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl  mb-4 md:mb-5">
             {t(item?.name)}
-          </h5>
+          </h3>
           {item?.list &&
             item?.list?.length &&
             item?.list?.map((subItem: Nav, subIndex: number) => (

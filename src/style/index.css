@@ -68,7 +68,7 @@
 }
 
 :root {
-    --babyBlueColor: #00F9FF;
+    --babyBlueColor: gray;
     --mainColor: #3D2571;
 }
 
@@ -191,48 +191,48 @@ a.active:has(a.active) {
 
 @keyframes colorful-o7soaomd {
     0% {
-        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, 0 0 #a56fcc,
-            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 -33.6px gray, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 gray, 0 0 #a56fcc,
+            0 0 gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc;
     }
 
     12.5% {
-        box-shadow: 0 0 #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
-            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 0 gray, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 gray, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 0 gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc;
     }
 
     25% {
-        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 33.6px 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
-            0 33.6px #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 0 gray, 0 0 #a56fcc, 33.6px 0 gray, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 33.6px gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc;
     }
 
     37.5% {
-        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
-            0 33.6px #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 0 gray, 0 0 #a56fcc, 0 0 gray, calc(33.6px*0.707) calc(33.6px*0.707) #a56fcc,
+            0 33.6px gray, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, 0 0 gray, 0 0 #a56fcc;
     }
 
     50% {
-        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
-            0 33.6px #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 0 gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc,
+            0 33.6px gray, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 gray, 0 0 #a56fcc;
     }
 
     62.5% {
-        box-shadow: 0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
-            0 0 #00f9ff, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+        box-shadow: 0 0 gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc,
+            0 0 gray, calc(-33.6px*0.707) calc(33.6px*0.707) #a56fcc, -33.6px 0 gray, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
     }
 
     75% {
-        box-shadow: 0 -33.6px #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
-            0 0 #00f9ff, 0 0 #a56fcc, -33.6px 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+        box-shadow: 0 -33.6px gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc,
+            0 0 gray, 0 0 #a56fcc, -33.6px 0 gray, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
     }
 
     87.5% {
-        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc,
-            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
+        box-shadow: 0 -33.6px gray, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 0 0 gray, 0 0 #a56fcc,
+            0 0 gray, 0 0 #a56fcc, 0 0 gray, calc(-33.6px*0.707) calc(-33.6px*0.707) #a56fcc;
     }
 
     100% {
-        box-shadow: 0 -33.6px #00f9ff, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 #00f9ff, 0 0 #a56fcc,
-            0 0 #00f9ff, 0 0 #a56fcc, 0 0 #00f9ff, 0 0 #a56fcc;
+        box-shadow: 0 -33.6px gray, calc(33.6px*0.707) calc(-33.6px*0.707) #a56fcc, 33.6px 0 gray, 0 0 #a56fcc,
+            0 0 gray, 0 0 #a56fcc, 0 0 gray, 0 0 #a56fcc;
     }
 }
 
