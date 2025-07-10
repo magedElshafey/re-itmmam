@@ -5,7 +5,7 @@ interface SidebarBtnProps {
 }
 const SidebarBtn : React.FC<SidebarBtnProps> = ({scrolling , handleShowSidebar}) => {
   return (
-    <button onClick={handleShowSidebar}>
+    <button className="lg:hidden" onClick={handleShowSidebar}>
     <IoMdMenu
       className={`lg:hidden ${
         scrolling ? "text-darkMainColor" : "text-white"

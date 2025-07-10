@@ -3,7 +3,7 @@ import about from "../assets/about-01.png";
 import { Nav } from "../types/Nav";
 export const navLinks: Nav[] = [
   {
-    name: "Home",
+    name: "Welcome Page",
     link: "/",
     id: 1,
   },
@@ -23,14 +23,38 @@ export const navLinks: Nav[] = [
     id: 4,
   },
   {
-    name: "declerations and publication",
-    link: "/declerations",
+    name: "declerations",
+    link: "/lists",
     id: 5,
+    list: [
+      {
+        name: "declerations",
+        link: "/declerations",
+        id: 51
+      },
+      {
+        name: "publications",
+        link: "publications",
+        id: 52
+      }
+    ]
   },
   {
-    name: "inquires and complaints",
-    link: "/inquires",
+    name: "inquires",
+    link: "/call-us",
     id: 4,
+    list: [
+      {
+        name: "complaints",
+        link: "/complaints",
+        id: 41
+      },
+      {
+        name: "inquires",
+        link: "/inquires",
+        id: 51
+      }
+    ]
   },
 ];
 export const footerLinks: Nav[] = [
