@@ -68,7 +68,7 @@ const Lists = () => {
                     src={item?.icon}
                     className=" w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 object-contain mx-auto brightness-0 invert mb-4"
                   />
-                  <p className="text-center text-white text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-bold mb-4">
+                  <p className="text-center text-white text-md md:text-lg lg:text-xl xl:text-2xl  font-bold mb-4">
                     {item?.name} - {item?.year}
                   </p>
                   <button
