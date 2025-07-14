@@ -18,22 +18,23 @@
     font-display: swap;
 }
 
-/* 
+
 @font-face {
-    font-family: "Gucina";
-    src: url("/assets/fonts/en/gucina-regular.otf") format("opentype");
+    font-family: "Aptos";
+    src: url("../../public/assets/fonts/en/Aptos.ttf") format('truetype');
+    ;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-} */
+}
 
-/* @font-face {
-    font-family: "Gucina";
-    src: url("/assets/fonts/en/gucina-medium.otf") format("opentype");
+@font-face {
+    font-family: "Aptos";
+    src: url("../../public/assets/fonts/en/Aptos-SemiBold.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-} */
+}
 
 /* @font-face {
     font-family: "Gucina";
@@ -44,13 +45,13 @@
 } */
 
 
-/* @font-face {
-    font-family: "Gucina";
-    src: url("/assets/fonts/en/gucina-bold.otf") format("opentype");
+@font-face {
+    font-family: "Aptos";
+    src: url("../../public/assets/fonts/en/Aptos-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-} */
+}
 
 @layer utilities {
     .transform-style-3d {

@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         arabic: ["Bahij Insan", "sans-serif"],
-        english: ["Playfair Display", "sans-serif"], // "Gucina",
+        english: ["Aptos", "sans-serif"], // "Gucina",
       },
       colors: {
         purpleColor: "#A56FCC",

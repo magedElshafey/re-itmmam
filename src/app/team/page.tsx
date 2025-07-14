@@ -93,17 +93,8 @@ const Teams = () => {
                 <div className="my-4 md:my-6 lg:my-8">
                   <Title title={t("Our Founders")} />
                 </div>
-                <div className="flex items-center md:justify-center gap-2 mb-4 md:mb-5">
+                {/* <div className="flex items-center md:justify-center gap-2 mb-4 md:mb-5">
                   <div className="flex items-center gap-1">
-                    {/* <p
-                      className={`text-darkPurpleColor ${
-                        i18n.language === "ar"
-                          ? "text-lg md:text-xl lg:text-2xl xl:text-5xl"
-                          : "text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
-                      } `}
-                    >
-                      1
-                    </p> */}
                     <img
                       alt="icon"
                       src={icon}
@@ -120,43 +111,33 @@ const Teams = () => {
                   >
                     {shareholders[0]?.name}
                   </p>
-                </div>
-                <div className="w-full flex md:justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-16">
-                    {shareholders?.slice(1)?.map((item: any, index: number) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-2 text-nowrap"
-                      >
-                        <div className="flex items-center gap-1">
-                          {/* <p
-                            className={`text-darkPurpleColor ${
-                              i18n.language === "ar"
-                                ? "text-lg md:text-xl lg:text-2xl xl:text-5xl"
-                                : "text-base md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
-                            } `}
-                          >
-                            {index + 2}
-                          </p> */}
-                          <img
-                            alt="icon"
-                            src={icon}
-                            className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                        <p
-                          className={` text-nowrap ${
-                            i18n.language === "ar"
-                              ? "text-xl md:text-2xl lg:text-3xl"
-                              : "text-base md:text-lg lg:text-xl"
-                          }`}
-                        >
-                          {item?.name}
-                        </p>
+                </div> */}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 ">
+                  {shareholders?.map((item: any, index: number) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 text-nowrap"
+                    >
+                      <div className="flex items-center gap-1">
+                        <img
+                          alt="icon"
+                          src={icon}
+                          className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 object-contain"
+                          loading="lazy"
+                        />
                       </div>
-                    ))}
-                  </div>
+                      <p
+                        className={` text-nowrap ${
+                          i18n.language === "ar"
+                            ? "text-xl md:text-2xl lg:text-3xl"
+                            : "text-base md:text-lg lg:text-xl"
+                        }`}
+                      >
+                        {item?.name}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </>
             ) : null}

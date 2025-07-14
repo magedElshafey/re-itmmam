@@ -5,7 +5,7 @@ interface TitleProps {
   title: string;
 }
 const Title: React.FC<TitleProps> = ({ title }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <motion.h3
       initial={{ opacity: 0, y: -80 }}
@@ -16,11 +16,7 @@ const Title: React.FC<TitleProps> = ({ title }) => {
         ease: "easeOut",
         bounce: 0.2,
       }}
-      className={`text-center font-black mb-4  ${
-        i18n.language === "ar"
-          ? "text-xl md:text-2xl lg:text-3xl xl:text-5xl"
-          : "text-md md:text-lg lg:text-xl xl:text-2xl"
-      }`}
+      className={`text-center font-black mb-4 text-xl md:text-2xl lg:text-3xl xl:text-5xl `}
     >
       {t(title)}
     </motion.h3>
