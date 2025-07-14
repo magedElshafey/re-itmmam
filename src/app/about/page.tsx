@@ -45,7 +45,7 @@ const AboutPage = () => {
       <div className="overflow-x-hidden">
         <Hero
           image={bg}
-          title={t("About itmmam investments")}
+          title={t("About itmmam invest")}
           descreption={t("We take your wealth to new frontiers")}
         />
         {aboutData?.description && (

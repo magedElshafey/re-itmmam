@@ -87,7 +87,7 @@ const Teams = () => {
       ) : (
         <div className="overflow-x-hidden">
           <Hero image={bg} title={t("meet our team")} />
-          <div className="container mx-auto px-3 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
+          <div className="container mx-auto px-3 md:px-16  my-4 md:my-6 lg:my-8 xl:my-12">
             {shareholders?.length ? (
               <>
                 <div className="my-4 md:my-6 lg:my-8">
