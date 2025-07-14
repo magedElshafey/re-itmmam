@@ -113,7 +113,7 @@ const Teams = () => {
                   </p>
                 </div> */}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 ">
+                <div className="flex items-center flex-wrap text-nowrap gap-4 md:gap-6 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-12">
                   {shareholders?.map((item: any, index: number) => (
                     <div
                       key={index}
