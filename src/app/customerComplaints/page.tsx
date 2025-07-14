@@ -25,7 +25,7 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
         image={pageData?.image || bg}
         title={pageData?.name || t("Customer complaints")}
       />
-      <div className="container mx-auto px-8 md:px-16 lg:px-24 my-5 md:my-8">
+      <div className="container mx-auto px-3 md:px-16 lg:px-24 my-5 md:my-8">
         {pageData?.description && <HtmlRenderer html={pageData?.description} />}
       </div>
       <div className="w-screen bg-[#F5F5F5]  py-5">

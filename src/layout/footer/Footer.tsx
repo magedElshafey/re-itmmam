@@ -25,6 +25,7 @@ interface FooterProps {
   phone1: string;
   phone2: string;
   support_email: string;
+  linkedin: string;
 }
 
 const Footer: React.FC<FooterProps> = ({
@@ -43,6 +44,7 @@ const Footer: React.FC<FooterProps> = ({
   phone1,
   phone2,
   support_email,
+  linkedin,
 }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -71,13 +73,13 @@ const Footer: React.FC<FooterProps> = ({
           ease: "easeOut",
           bounce: 0.2,
         }}
-        className="relative container mx-auto px-8 md:px-16 lg:px-24 py-8 flex items-center"
+        className="relative container mx-auto px-3 md:px-16 lg:px-24 py-8 flex items-center"
       >
         <div>
           <div className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 xl:gap-12 mb-8">
             <div>
               <img
-                className="h-auto w-[210px] cursor-pointer"
+                className="w-36 lg:w-44 h-auto cursor-pointer"
                 onClick={handleClick}
                 src={whiteLogo}
               />
@@ -160,12 +162,13 @@ const Footer: React.FC<FooterProps> = ({
                   instagram={instagram}
                   youtube={youtube}
                   x={x}
+                  linkedin={linkedin}
                 />
               </div>
             </div>
           </div>
           {copyRight && <CopyRight copyRight={copyRight} />}
-          <div className="mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-full flex justify-center text-white">
+          <div className="mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-full flex lg:justify-center text-white pt-4 border-t border-t-white">
             <p>
               Designed and Developed by{" "}
               <a

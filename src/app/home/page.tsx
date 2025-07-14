@@ -51,7 +51,7 @@ const HomePage = () => {
         // ]}
       />
 
-      <div className="container mx-auto px-8 md:px-16 lg:px-24">
+      <div className="container mx-auto px-3 md:px-16 lg:px-24">
         {whyUsData?.length ? (
           <div className="my-5 md:my-6 lg:my-7 xl:my-8">
             <Title title="Why Investors Choose Us" />{" "}

@@ -42,10 +42,10 @@ const Lists = () => {
         listDesc={t("Your clear guide to better business decisions")}
         isList={true}
       />
-      <div className="container mx-auto px-8 md:px-16 lg:px-24 my-8 md:my-10 lg:my-12 xl:my-14">
+      <div className="container mx-auto px-3 md:px-16 lg:px-24 my-8 md:my-10 lg:my-12 xl:my-14">
         {data && data?.length ? (
           <div className="mb-6 md:mb-8 lg:mb-10 xl:mb-12">
-            <p className="text-base md:text-md lg:text-lg xl:text-lg 2xl:text-2xl font-semibold mb-3">
+            <p className="text-base md:text-md lg:text-lg xl:text-lg 2xl:text-2xl text-center font-semibold mb-3">
               {t("In completion, we stand out for several compelling reasons.")}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">

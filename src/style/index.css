@@ -18,38 +18,39 @@
     font-display: swap;
 }
 
+/* 
 @font-face {
     font-family: "Gucina";
     src: url("/assets/fonts/en/gucina-regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+} */
 
-@font-face {
+/* @font-face {
     font-family: "Gucina";
     src: url("/assets/fonts/en/gucina-medium.otf") format("opentype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-}
+} */
 
-@font-face {
+/* @font-face {
     font-family: "Gucina";
     src: url("/assets/fonts/en/gucina-semibold.otf") format("opentype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 
-@font-face {
+/* @font-face {
     font-family: "Gucina";
     src: url("/assets/fonts/en/gucina-bold.otf") format("opentype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 @layer utilities {
     .transform-style-3d {

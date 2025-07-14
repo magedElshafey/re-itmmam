@@ -87,7 +87,7 @@ const Teams = () => {
       ) : (
         <div className="overflow-x-hidden">
           <Hero image={bg} title={t("meet our team")} />
-          <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
+          <div className="container mx-auto px-3 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
             {shareholders?.length ? (
               <>
                 <div className="my-4 md:my-6 lg:my-8">
@@ -95,7 +95,7 @@ const Teams = () => {
                 </div>
                 <div className="flex items-center md:justify-center gap-2 mb-4 md:mb-5">
                   <div className="flex items-center gap-1">
-                    <p
+                    {/* <p
                       className={`text-darkPurpleColor ${
                         i18n.language === "ar"
                           ? "text-lg md:text-xl lg:text-2xl xl:text-5xl"
@@ -103,7 +103,7 @@ const Teams = () => {
                       } `}
                     >
                       1
-                    </p>
+                    </p> */}
                     <img
                       alt="icon"
                       src={icon}
@@ -122,14 +122,14 @@ const Teams = () => {
                   </p>
                 </div>
                 <div className="w-full flex md:justify-center">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-16">
                     {shareholders?.slice(1)?.map((item: any, index: number) => (
                       <div
                         key={index}
                         className="flex items-center gap-2 text-nowrap"
                       >
                         <div className="flex items-center gap-1">
-                          <p
+                          {/* <p
                             className={`text-darkPurpleColor ${
                               i18n.language === "ar"
                                 ? "text-lg md:text-xl lg:text-2xl xl:text-5xl"
@@ -137,7 +137,7 @@ const Teams = () => {
                             } `}
                           >
                             {index + 2}
-                          </p>
+                          </p> */}
                           <img
                             alt="icon"
                             src={icon}

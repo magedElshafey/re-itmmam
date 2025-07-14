@@ -21,4 +21,5 @@ export interface Settings {
   support_email: string;
   embed_map?: string;
   address: string;
+  linkedin: string;
 }

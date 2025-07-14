@@ -1,6 +1,6 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
-import CallToAction from "../callToAction/CallToAction";
+// import CallToAction from "../callToAction/CallToAction";
 import Social from "../../components/common/social/Social";
 import MainLinks from "../common/mainLinks/MainLinks";
 interface SidebarProps {
@@ -39,15 +39,15 @@ const Sidebar: React.FC<SidebarProps> = ({
           <IoCloseSharp className="text-2xl text-white mb-5" />
         </button>
       </div>
-      <ul>
+      <ul className="flex flex-col gap-5">
         <MainLinks setShowSidebar={setShowSidebar} />
       </ul>
-      <div className="my-5">
+      {/* <div className="my-5">
         <CallToAction
           showSidebar={showSidebar}
           setShowSidebar={setShowSidebar}
         />
-      </div>
+      </div> */}
       <div className="mt-5">
         <h5 className="text-white mb-2">{t("follow us")} :</h5>
         <Social

@@ -30,13 +30,15 @@ const Hero: React.FC<HeroProps> = ({
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="w-full h-[60vh] bg-black bg-opacity-40   flex items-center justify-center">
-        <div className="container mx-auto px-8 md:px-16 lg:px-24  flex flex-col items-center justify-center gap-2">
+        <div className="container mx-auto px-3 md:px-16 lg:px-24  flex flex-col items-center justify-center gap-2">
           {title && (
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl ${descreption ? "mb-2" : ""} ${isList ? "text-center" : ""}`}
+              className={`text-white text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl ${
+                descreption ? "mb-2" : ""
+              } ${isList ? "text-center" : ""}`}
             >
               {t(title)}
             </motion.h1>

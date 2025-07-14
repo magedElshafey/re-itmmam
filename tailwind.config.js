@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         arabic: ["Bahij Insan", "sans-serif"],
-        english: ["Gucina", "sans-serif"],
+        english: ["Playfair Display", "sans-serif"], // "Gucina",
       },
       colors: {
         purpleColor: "#A56FCC",
@@ -16,8 +16,7 @@ export default {
         babyBlueColor: "#00F9FF",
       },
       backgroundImage: {
-        "custom-gradient":
-          "linear-gradient(180deg, #6642AB 0%, #C292E3 100%)",
+        "custom-gradient": "linear-gradient(180deg, #6642AB 0%, #C292E3 100%)",
       },
       transformStyle: {
         "3d": "preserve-3d",

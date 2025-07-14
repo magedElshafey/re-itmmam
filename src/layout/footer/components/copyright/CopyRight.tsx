@@ -1,15 +1,14 @@
-import HtmlRenderer from "../../../../components/common/html/HtmlRender"
+import HtmlRenderer from "../../../../components/common/html/HtmlRender";
 
 interface CopyRightProps {
-    copyRight? : string
+  copyRight?: string;
 }
-const CopyRight : React.FC<CopyRightProps> = ({copyRight}) => {
+const CopyRight: React.FC<CopyRightProps> = ({ copyRight }) => {
   return (
-    <div className="w-full flex justify-center">
-      <HtmlRenderer html= {copyRight || ""} /> 
-   
-  </div>
-  )
-}
+    <div className="w-full flex lg:justify-center">
+      <HtmlRenderer html={copyRight || ""} />
+    </div>
+  );
+};
 
-export default CopyRight
+export default CopyRight;

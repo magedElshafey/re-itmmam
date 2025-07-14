@@ -129,6 +129,7 @@ const App = () => {
           phone1={data?.phone || ""}
           phone2={data?.phone2 || ""}
           support_email={data?.support_email || ""}
+          linkedin={data?.linkedin || ""}
         />
       </Suspense>
     </>

@@ -45,19 +45,19 @@ const AboutPage = () => {
       <div className="overflow-x-hidden">
         <Hero
           image={bg}
-          title={t("about us")}
+          title={t("About itmmam investments")}
           descreption={t("We take your wealth to new frontiers")}
         />
         {aboutData?.description && (
-          <div className="container mx-auto px-8 md:px-16 lg:px-24  text-center flex items-center justify-center mt-4 md:mt-5 lg:mt-6 xl:mt-7">
+          <div className="container mx-auto px-3 md:px-16 lg:px-24  text-center flex items-center justify-center mt-4 md:mt-5 lg:mt-6 xl:mt-7">
             <HtmlRenderer html={aboutData?.description} />
           </div>
         )}
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-5 lg:my-6 xl:my-7">
+        <div className="container mx-auto px-3 md:px-16 lg:px-24 my-4 md:my-5 lg:my-6 xl:my-7">
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
-              <p className="w-full lg:text-md 2xl:text-xl   mx-auto text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
+              <p className="w-full lg:text-md 2xl:text-xl text-center  mx-auto xl:text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
                 Under our CMA license we are empowered to deliver three
                 complementary, fully regulated services:
               </p>
@@ -72,11 +72,11 @@ const AboutPage = () => {
                       src={item?.image || about}
                       className="w-full h-[300px] rounded-xl object-cover"
                     />
-                    <div className="pb-4 px-7 mt-5">
-                      <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-3">
+                    <div className="pb-4 px-3 lg:px-7 mt-5">
+                      <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-2 lg:mb-3">
                         {item?.title}
                       </p>
-                      <div className="text-center">
+                      <div className="lg:text-center">
                         <HtmlRenderer html={item?.description} />
                       </div>
                     </div>
@@ -86,8 +86,8 @@ const AboutPage = () => {
             </div>
           ) : null}
           {/**mission and vission */}
-          <div className="bg-[#00F9FF] py-4 px-8 bg-opacity-[8%]">
-            <div className="flex  flex-col md:flex-row gap-4 md:gap-5 lg:gap-6 mb-5">
+          <div className="bg-[#00F9FF] py-4 px-3 lg:px-8 bg-opacity-[8%]">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-5 lg:gap-6 mb-5">
               <div className="flex flex-col items-center gap-2">
                 <img
                   alt="vissio"
@@ -133,7 +133,7 @@ const AboutPage = () => {
             />
           </div>
           <div className="w-full flex-1  h-auto md:max-h-[300px] py-4 flex items-center ">
-            <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="container mx-auto px-3 md:px-6 lg:px-8">
               <p
                 className={`font-bold text-xl md:text-2xl lg:text-3xl  mb-2  ${
                   i18n.language === "ar" ? "xl:text-5xl" : "xl:text-4xl"
@@ -163,7 +163,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        <div className="container mx-auto px-8 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
+        <div className="container mx-auto px-3 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
           {/* about supports */}
           {setUsData?.length ? (
             <div className="my-5 md:my-6 lg:my-7 xl:my-8">

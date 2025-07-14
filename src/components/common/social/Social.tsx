@@ -4,6 +4,7 @@ import {
   FaWhatsapp,
   FaYoutube,
   FaTiktok,
+  FaLinkedin,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 interface SocialProps {
@@ -13,6 +14,7 @@ interface SocialProps {
   tiktok?: string;
   whatsapp?: string;
   x?: string;
+  linkedin?: string;
 }
 
 const Social: React.FC<SocialProps> = ({
@@ -22,6 +24,7 @@ const Social: React.FC<SocialProps> = ({
   tiktok,
   whatsapp,
   x,
+  linkedin,
 }) => {
   return (
     <ul className="flex items-center gap-4 flex-wrap text-babyBlueColor">
@@ -94,6 +97,18 @@ const Social: React.FC<SocialProps> = ({
             className=" duration-300 hover:text-white hover:scale-110"
           >
             <FaXTwitter size={30} />
+          </a>
+        </li>
+      )}
+      {linkedin && (
+        <li>
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className=" duration-300 hover:text-white hover:scale-110"
+          >
+            <FaLinkedin size={30} />
           </a>
         </li>
       )}
