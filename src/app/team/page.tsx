@@ -113,7 +113,7 @@ const Teams = () => {
                   </p>
                 </div> */}
 
-                <div className="flex items-center flex-wrap text-nowrap gap-4 md:gap-6 lg:gap-x-8 xl:gap-x-10 2xl:gap-x-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   {shareholders?.map((item: any, index: number) => (
                     <div
                       key={index}
@@ -144,7 +144,7 @@ const Teams = () => {
             {employees?.length ? (
               <>
                 <div className="my-4 md:my-6 lg:my-8 xl:my-12">
-                  <Title title={t("Functional structure")} />
+                  <Title title={t("Board of Members")} />
                 </div>
                 <Slider {...getSliderSettings(employees?.length || 0)}>
                   {employees?.map((item: Employee) => (

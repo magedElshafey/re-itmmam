@@ -37,9 +37,7 @@ const RegisterInterst: React.FC<RegisterInterstProps> = ({
               i18n.language === "ar" ? "text-base md:text-md lg:text-lg" : ""
             }`}
           >
-            {t(
-              "You can request our consultation by filling out this information and requesting the type of service"
-            )}
+            {t("submit your complaint")}
           </p>
           <a
             href={`mailto:${email}`}

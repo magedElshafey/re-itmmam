@@ -74,6 +74,10 @@
     --mainColor: #3D2571;
 }
 
+.bb li {
+    list-style-type: disc !important;
+}
+
 body {
     overflow-x: hidden;
     text-transform: capitalize;

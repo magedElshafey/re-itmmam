@@ -8,7 +8,7 @@ export const navLinks: Nav[] = [
     id: 1,
   },
   {
-    name: "About itmmam investments",
+    name: "About itmam invest",
     link: "/about",
     id: 2,
   },
