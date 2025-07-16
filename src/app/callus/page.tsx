@@ -14,7 +14,7 @@ interface CallusPageProps {
   logo?: string;
 }
 const CallusPage: React.FC<CallusPageProps> = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data: settings, isLoading } = useSettings();
   if (isLoading) return <Loader />;
   console.log("settings data is", settings);
@@ -25,8 +25,16 @@ const CallusPage: React.FC<CallusPageProps> = () => {
       <Hero title="contact us" image={hero} />
       <div className="py-10 grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-10 lg:gap-x-20 px-4 md:px-10 lg:px-20 xl:px-40">
         <div className="flex flex-col">
-          <h1>{t("contact us")}</h1>
-          <p>
+          <h1
+            className={
+              i18n?.language === "ar"
+                ? "text-md md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl"
+                : ""
+            }
+          >
+            {t("contact us")}
+          </h1>
+          <p className="text-base md:text-md lg:text-lg xl:text-xl">
             <a
               dir="ltr"
               href={`https://wa.me/${settings?.phone}`}
@@ -37,7 +45,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
               {settings?.phone}
             </a>
           </p>
-          <p>
+          <p className="text-base md:text-md lg:text-lg xl:text-xl">
             <a
               dir="ltr"
               href={`https://wa.me/${settings?.phone2}`}
@@ -48,7 +56,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
               {settings?.phone2}
             </a>
           </p>
-          <p>
+          <p className="text-base md:text-md lg:text-lg xl:text-xl">
             <a
               href={`mailto:${settings?.support_email}`}
               target="_blank"
@@ -58,7 +66,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
               {settings?.support_email}
             </a>
           </p>
-          <p>
+          <p className="text-base md:text-md lg:text-lg xl:text-xl">
             <a
               href={`mailto:${settings?.email}`}
               target="_blank"
@@ -70,7 +78,15 @@ const CallusPage: React.FC<CallusPageProps> = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h1>{t("address details")}</h1>
+          <h1
+            className={
+              i18n?.language === "ar"
+                ? "text-md md:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl"
+                : ""
+            }
+          >
+            {t("address details")}
+          </h1>
           <div
             style={{
               fontSize: "18px",
