@@ -41,7 +41,9 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
         {data && data?.length ? (
           <div className="mb-6 md:mb-8 lg:mb-10 xl:mb-12">
             <p className="text-base md:text-md lg:text-lg xl:text-lg 2xl:text-2xl text-center font-semibold mb-3">
-              {t("In completion, we stand out for several compelling reasons.")}
+              {t(
+                "Our Commitment: Itmam Invest treats every complaint as an opportunity to enhance service quality, strengthen controls, and safeguard client interests."
+              )}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {data?.map((item: any, index: number) => (
@@ -79,6 +81,12 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
                 </motion.div>
               ))}
             </div>
+            <p className=" font-semibold my-5">
+              *{" "}
+              {t(
+                "If you have a complaint you would like to submit, please review the complaint submission procedures in the file (Complaint Submission Procedures)."
+              )}
+            </p>
           </div>
         ) : null}
         {/* <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">

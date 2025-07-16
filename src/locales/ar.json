@@ -1,6 +1,6 @@
 {
   "test": "تيست",
-  "Home": "الرئيسية",
+  "Home": "الرئيسية أهلا و مرحبا",
   "About": "من نحن",
   "asset managment": "إدارة الأصول",
   "investment banking": "الخدمات المصرفية الاستثمارية",
@@ -49,7 +49,7 @@
   "Organizational structure": "الهيكل التنظيمي",
   "core values": "قيمنا الأساسية",
   "about us": "من نحن",
-  "Financial statements": "القوائم المالية",
+  "Financial statements": "الإفصاحات",
   "Your clear guide to better business decisions": "دليلك لرؤية أوضح وقرارات أفضل في عالم الأعمال والاستثمار",
   "Download the report": "تحميل التقرير",
   "In completion, we stand out for several compelling reasons.": "في إتمام، نتميز بعدة أسباب مقنعة",
@@ -60,7 +60,7 @@
   "About itmmam investments": "عن إتمام للإستثمار",
   "meet our team": "فريق العمل",
   "our range of services": "خدماتنا",
-  "declerations and publication": "الافصاحات والنشر",
+  "declerations and publication": "الإفصاحات والنشر",
   "inquires and complaints": "الاستفسارات والشكاوى",
   "address details": "تفاصيل العنوان",
   "We take your wealth to new frontiers": "نحن نأخذ ثروتك إلى آفاق جديدة",
@@ -80,9 +80,9 @@
   "Phone Number": "رقم الجوال",
   "Message title": "عنوان الرسالة",
   "Message content": "محتوي الرسالة",
-  "Welcome Page": "الرئيسية",
+  "Welcome Page": "الرئيسية أهلًا و مرحبًا",
   "About itmam invest": "عن إتمام للإستثمار ",
-  "declerations": "الافصاحات",
+  "declerations": "الإفصاحات",
   "inquires": "الإستعلامات",
   "publications": "المنشورات",
   "complaints": "الشكاوي",
@@ -91,5 +91,7 @@
   "Under our CMA license we are empowered to deliver three complementary, fully regulated services:": "بموجب ترخيص هيئة السوق المالية، نقدّم ثلاث خدمات تكاملية خاضعة للإشراف الكامل",
   "Board of Members": "مجلس الأعضاء",
   "publication": "المنشورات",
-  "submit your complaint": "قدم شكواك"
+  "submit your complaint": "قدم شكواك",
+  "Our Commitment: Itmam Invest treats every complaint as an opportunity to enhance service quality, strengthen controls, and safeguard client interests.": "التزامنا: تعتبر إتمام للاستثمار كل شكوى فرصة لتحسين جودة الخدمة وتعزيز الرقابة وحماية مصالح العملاء",
+  "If you have a complaint you would like to submit, please review the complaint submission procedures in the file (Complaint Submission Procedures).": "في حاله وجود شكوي ترغب بتقديمها نأمل منكم الإطلاع على إجراءات تقديم الشكاوي بملف (إجراءات تقديم شكوي)"
 }
