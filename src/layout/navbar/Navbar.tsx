@@ -6,7 +6,7 @@ import Sidebar from "../sidebar/Sidebar";
 // import CallToAction from "../callToAction/CallToAction";
 import MainLinks from "../common/mainLinks/MainLinks";
 import SidebarBtn from "./components/sidebarBtn/SidebarBtn";
-// import LangBtn from "./components/langBtn/LangBtn";
+import LangBtn from "./components/langBtn/LangBtn";
 
 interface NavbarProps {
   facebook?: string;
@@ -29,9 +29,9 @@ const Navbar: React.FC<NavbarProps> = ({
   darkLogo,
 }) => {
   const {
-    states: { showSidebar, scrolling },
+    states: { showSidebar, scrolling, language },
     refs: { sidebarRef },
-    handlers: { setShowSidebar, handleShowSidebar },
+    handlers: { setShowSidebar, handleShowSidebar, changeLanguageHandler },
   } = useNavbarLogic();
   return (
     <>
@@ -40,24 +40,24 @@ const Navbar: React.FC<NavbarProps> = ({
           scrolling ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full px-4 2xl:px-8   text-nowrap">
-          <div className="w-full flex items-center justify-between lg:justify-start  gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-10">
-            <Logo logo={scrolling ? darkLogo : whiteLogo} />
-            <ul className="hidden flex-1  lg:flex items-center gap-5 lg:gap-6">
-              <MainLinks scrolling={scrolling} />
-            </ul>
+        <div className="w-full px-4 2xl:px-8  text-nowrap">
+          <div className="w-full flex items-center justify-between   gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-10">
+            <div className="flex items-center gap-4">
+              <Logo logo={scrolling ? darkLogo : whiteLogo} />
+              <ul className="hidden flex-1  lg:flex items-center gap-5 lg:gap-6">
+                <MainLinks scrolling={scrolling} />
+              </ul>
+              <LangBtn
+                changeLanguageHandler={changeLanguageHandler}
+                language={language}
+                scrolling={scrolling}
+              />
+            </div>
+
             <SidebarBtn
               scrolling={scrolling}
               handleShowSidebar={handleShowSidebar}
             />
-            {/* <div className="hidden lg:block">
-                <CallToAction scrolling={scrolling} />
-              </div> */}
-            {/* <LangBtn
-                changeLanguageHandler={changeLanguageHandler}
-                language={language}
-                scrolling={scrolling}
-              /> */}
           </div>
         </div>
       </div>

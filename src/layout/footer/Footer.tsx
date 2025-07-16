@@ -170,14 +170,14 @@ const Footer: React.FC<FooterProps> = ({
           {copyRight && <CopyRight copyRight={copyRight} />}
           <div className="mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-full flex lg:justify-center text-white pt-4 border-t border-t-white">
             <p>
-              Designed and Developed by{" "}
+              {t("Designed and Developed by")}{" "}
               <a
                 href="https://qutell.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="font-bold underline"
               >
-                Qutell Technology
+                {t("Qutell Technology")}
               </a>
             </p>
           </div>
