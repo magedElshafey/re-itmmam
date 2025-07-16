@@ -20,3 +20,5 @@ export const home_page = "home_page";
 export const regulatory_mandate = "regulatory_mandate ";
 export const sets_us_apart = "sets_us_apart ";
 export const partner_with_invest = "partner_with_invest ";
+export const publications = "publications/publication";
+export const complaints = "complaints/complaint";
