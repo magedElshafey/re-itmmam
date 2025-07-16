@@ -25,7 +25,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
       <Hero title="contact us" image={hero} />
       <div className="py-10 grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-10 lg:gap-x-20 px-4 md:px-10 lg:px-20 xl:px-40">
         <div className="flex flex-col">
-          <h1>Contact Us</h1>
+          <h1>{t("contact us")}</h1>
           <p>
             <a
               dir="ltr"
@@ -70,7 +70,7 @@ const CallusPage: React.FC<CallusPageProps> = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h1>address details</h1>
+          <h1>{t("address details")}</h1>
           <div
             style={{
               fontSize: "18px",

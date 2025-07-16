@@ -58,8 +58,9 @@ const AboutPage = () => {
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
               <p className="w-full lg:text-md 2xl:text-xl text-center  mx-auto xl:text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
-                Under our CMA license we are empowered to deliver three
-                complementary, fully regulated services:
+                {t(
+                  "Under our CMA license we are empowered to deliver three complementary, fully regulated services:"
+                )}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
                 {regural?.map((item: any, index: number) => (
