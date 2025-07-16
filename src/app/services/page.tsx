@@ -9,7 +9,7 @@ import ServiceCard from "./components/serviceCard";
 import useNewServices from "./api/useNewServices";
 
 const Services = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const {
     query: { data: services, isLoading: servicesLoading },
@@ -33,22 +33,25 @@ const Services = () => {
     <>
       <Head title={tabTitle(t("Services"))} />
       <Hero
-        title={t("our range of services")}
+        title={
+          i18n.language === "ar" ? "نطاق خدماتنا" : t("our range of services")
+        }
         descreption={t("licensed, integrated, Aligned with your Ambition")}
         image={assets}
       />
       <div className="flex flex-col gap-10 py-4 lg:px-20 md:px-10 px-2 mb-4">
-        <p className="text-center w-full md:w-3/4 mx-auto font-medium text-base lg:text-md 2xl:text-xl">
+        <p className="text-center w-full md:w-3/4 mx-auto font-medium text-base lg:text-md 2xl:text-xl mt-4">
           {t(
-            "Below is a close look at the three fully regulated offerings that power Itmam Invest end-to-end value proposition each service is delivered under our capital"
+            "Here's a detailed look at the three fully regulated solutions that make up Emaar Investment's integrated value proposition."
           )}
         </p>
 
         {(services || []).map((service, index) => (
           <ServiceCard service={service} index={index} key={index} />
         ))}
-
-        <Title title="Why Itmam Invest?" />
+        <div className="mt-5">
+          <Title title="Why Itmam Invest?" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {(investments || []).map((card, index) => (
             <div
@@ -69,9 +72,11 @@ const Services = () => {
             </div>
           ))}
         </div>
-        <div
-          dangerouslySetInnerHTML={{ __html: footer?.[0].description || "" }}
-        />
+        <div className="flex justify-center">
+          <div
+            dangerouslySetInnerHTML={{ __html: footer?.[0].description || "" }}
+          />
+        </div>
       </div>
     </>
   );
