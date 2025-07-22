@@ -8,26 +8,22 @@ import { motion } from "framer-motion";
 // import Contact from "../../components/home/contact/Contact";
 // import RegisterInterst from "../../components/home/RegisterInterst";
 
-import { useState } from "react";
 import { saveAs } from "file-saver";
 import useDownloadPdf from "./api/useDownloadPdf";
 import Loader from "../../components/common/loader/Loader";
-// interface ListsProps {
-//   email: string;
-//   darkLogo: string;
-// }
+
 const Lists = () => {
   const { t } = useTranslation();
   const { isLoading: loadingData, data } = useLists();
-  const [selectedId, setSelectedId] = useState<string | number | null>(null);
-  const { isLoading, refetch } = useDownloadPdf(selectedId);
+  const { mutateAsync, isPending } = useDownloadPdf();
+
   const handleDownload = async (id: number | string) => {
-    setSelectedId(id);
-    const result = await refetch();
-    if (result.data) {
-      // حفظ الملف باستخدام file-saver
-      const blob = new Blob([result.data], { type: "application/pdf" });
+    try {
+      const data = await mutateAsync(id);
+      const blob = new Blob([data], { type: "application/pdf" });
       saveAs(blob, `report-${id}.pdf`);
+    } catch (error) {
+      console.error("Download failed", error);
     }
   };
   if (loadingData) {
@@ -72,9 +68,9 @@ const Lists = () => {
                     {item?.name} - {item?.year}
                   </p>
                   <button
-                    disabled={isLoading}
+                    disabled={isPending}
                     className={`bg-white w-[70%] mx-auto p-2 rounded-lg flex items-center justify-center text-black ${
-                      isLoading ? "bg-opacity-10 cursor-not-allowed" : ""
+                      isPending ? "bg-opacity-10 cursor-not-allowed" : ""
                     }`}
                     key={index}
                     onClick={() => handleDownload(item?.id)}

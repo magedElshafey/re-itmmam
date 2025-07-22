@@ -6,21 +6,20 @@ import bg from "../../assets/assets-min.webp";
 import Loader from "../../components/common/loader/Loader";
 import useGetPublication from "./api/useGetPublication";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import useDownloadPdf from "../lists/api/useDownloadPdf";
 import { saveAs } from "file-saver";
 const Publication = () => {
   const { t } = useTranslation();
   const { isLoading: loadingData, data } = useGetPublication();
-  const [selectedId, setSelectedId] = useState<string | number | null>(null);
-  const { isLoading, refetch } = useDownloadPdf(selectedId);
+  const { mutateAsync, isPending } = useDownloadPdf();
+
   const handleDownload = async (id: number | string) => {
-    setSelectedId(id);
-    const result = await refetch();
-    if (result.data) {
-      // حفظ الملف باستخدام file-saver
-      const blob = new Blob([result.data], { type: "application/pdf" });
+    try {
+      const data = await mutateAsync(id);
+      const blob = new Blob([data], { type: "application/pdf" });
       saveAs(blob, `report-${id}.pdf`);
+    } catch (error) {
+      console.error("Download failed", error);
     }
   };
   if (loadingData) {
@@ -64,9 +63,9 @@ const Publication = () => {
                       {item?.name} {item?.year ? "-" + item.year : null}
                     </p>
                     <button
-                      disabled={isLoading}
+                      disabled={isPending}
                       className={`bg-white w-[70%] mx-auto p-2 rounded-lg flex items-center justify-center text-black ${
-                        isLoading ? "bg-opacity-10 cursor-not-allowed" : ""
+                        isPending ? "bg-opacity-10 cursor-not-allowed" : ""
                       }`}
                       key={index}
                       onClick={() => handleDownload(item?.id)}

@@ -8,7 +8,6 @@ import Contact from "../../components/home/contact/Contact";
 import RegisterInterst from "../../components/home/RegisterInterst";
 import useGetComplaint from "./api/useGetComplaint";
 import { motion } from "framer-motion";
-// import { useState } from "react";
 import useDownloadPdf from "../lists/api/useDownloadPdf";
 import { saveAs } from "file-saver";
 interface ComplaintsProps {
@@ -18,17 +17,7 @@ interface ComplaintsProps {
 const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
   const { t } = useTranslation();
   const { isLoading: loadingData, data } = useGetComplaint();
-  // const [selectedId, setSelectedId] = useState<string | number | null>(null);
-  // const { isLoading, refetch } = useDownloadPdf(selectedId);
-  // const handleDownload = async (id: number | string) => {
-  //   setSelectedId(id);
-  //   const result = await refetch();
-  //   if (result.data) {
-  //     // حفظ الملف باستخدام file-saver
-  //     const blob = new Blob([result.data], { type: "application/pdf" });
-  //     saveAs(blob, `report-${id}.pdf`);
-  //   }
-  // };
+
   const { mutateAsync, isPending } = useDownloadPdf();
 
   const handleDownload = async (id: number | string) => {
