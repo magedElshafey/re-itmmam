@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { baseUrl } from "../../../services/api/config";
-import fav from "../../../assets/favicon-32x32.png";
+import fav from "../../../../public/favicon-32x32.png";
 interface HeadProps {
   title?: string;
   description?: string;
