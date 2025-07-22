@@ -35,7 +35,6 @@ const AboutPage = () => {
   };
   const mission = data?.filter((item: About) => item?.type === "mission");
   const vission = data?.filter((item: About) => item?.type === "vision");
-  console.log("regural", regural);
   return (
     <>
       <Head
