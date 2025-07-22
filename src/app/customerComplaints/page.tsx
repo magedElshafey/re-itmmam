@@ -76,7 +76,7 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
                     key={index}
                     onClick={() => handleDownload(item?.id)}
                   >
-                    {t("Download the report")}
+                    {t("Complaints policy")}
                   </button>
                 </motion.div>
               ))}

@@ -1,5 +1,5 @@
 export const apiUrl: string = "https://dashboard.itmaminvest.com/api/site/";
-export const baseUrl: string = "https://dash.qutell.net/";
+export const baseUrl: string = "https://itmaminvest.com";
 export const heroHome: string = "hero_sections";
 export const settings: string = "settings";
 export const mainServices: string = "getMainServices";
