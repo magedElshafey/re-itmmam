@@ -1,20 +1,20 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { Axios } from "../../../services/api/Axios";
-const useDownloadPdf = (selectedId: string | number | null) => {
-  return useQuery({
-    queryKey: ["download-pdf", selectedId],
-    queryFn: async ({ queryKey }) => {
-      const [, id] = queryKey;
-      if (!id) return null;
+import { useTranslation } from "react-i18next";
 
-      // مهم جدًا: تحديد نوع الاستجابة
-      const response = await Axios.get(`financial_menus/download/${id}`, {
-        responseType: "blob",
-      });
+const useDownloadPdf = () => {
+  const { i18n } = useTranslation();
 
+  return useMutation({
+    mutationFn: async (id: string | number) => {
+      const response = await Axios.get(
+        `financial_menus/download/${id}?lang=${i18n.language}`,
+        {
+          responseType: "blob",
+        }
+      );
       return response.data;
     },
-    enabled: false,
   });
 };
 

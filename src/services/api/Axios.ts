@@ -8,7 +8,6 @@ export const Axios = axios.create({
   validateStatus: (status) => status >= 200 && status < 400,
   headers: {
     "Content-Type": "multipart/form-data",
-    
   },
 });
 const AxiosConfig = () => {

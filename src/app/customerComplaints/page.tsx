@@ -8,7 +8,7 @@ import Contact from "../../components/home/contact/Contact";
 import RegisterInterst from "../../components/home/RegisterInterst";
 import useGetComplaint from "./api/useGetComplaint";
 import { motion } from "framer-motion";
-import { useState } from "react";
+// import { useState } from "react";
 import useDownloadPdf from "../lists/api/useDownloadPdf";
 import { saveAs } from "file-saver";
 interface ComplaintsProps {
@@ -18,21 +18,32 @@ interface ComplaintsProps {
 const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
   const { t } = useTranslation();
   const { isLoading: loadingData, data } = useGetComplaint();
-  const [selectedId, setSelectedId] = useState<string | number | null>(null);
-  const { isLoading, refetch } = useDownloadPdf(selectedId);
+  // const [selectedId, setSelectedId] = useState<string | number | null>(null);
+  // const { isLoading, refetch } = useDownloadPdf(selectedId);
+  // const handleDownload = async (id: number | string) => {
+  //   setSelectedId(id);
+  //   const result = await refetch();
+  //   if (result.data) {
+  //     // حفظ الملف باستخدام file-saver
+  //     const blob = new Blob([result.data], { type: "application/pdf" });
+  //     saveAs(blob, `report-${id}.pdf`);
+  //   }
+  // };
+  const { mutateAsync, isPending } = useDownloadPdf();
+
   const handleDownload = async (id: number | string) => {
-    setSelectedId(id);
-    const result = await refetch();
-    if (result.data) {
-      // حفظ الملف باستخدام file-saver
-      const blob = new Blob([result.data], { type: "application/pdf" });
+    try {
+      const data = await mutateAsync(id);
+      const blob = new Blob([data], { type: "application/pdf" });
       saveAs(blob, `report-${id}.pdf`);
+    } catch (error) {
+      console.error("Download failed", error);
     }
   };
+
   if (loadingData) {
     return <Loader />;
   }
-  console.log("data from complaint", data);
   return (
     <>
       <Head title={tabTitle(t("Customer complaints"))} />
@@ -69,9 +80,9 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
                     {item?.name} {item?.year ? "-" + item.year : null}
                   </p>
                   <button
-                    disabled={isLoading}
+                    disabled={isPending}
                     className={`bg-white w-[70%] mx-auto p-2 rounded-lg flex items-center justify-center text-black ${
-                      isLoading ? "bg-opacity-10 cursor-not-allowed" : ""
+                      isPending ? "bg-opacity-10 cursor-not-allowed" : ""
                     }`}
                     key={index}
                     onClick={() => handleDownload(item?.id)}
@@ -89,14 +100,6 @@ const Page: React.FC<ComplaintsProps> = ({ darkLogo }) => {
             </p>
           </div>
         ) : null}
-        {/* <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8">
-          <div className="w-full md:w-1/2">
-            <RegisterInterst email={email} darkLogo={darkLogo} />
-          </div>
-          <div className="w-full md:w-1/2">
-            <Contact />
-          </div>
-        </div> */}
       </div>
       <div className="w-screen bg-[#F5F5F5]  py-5">
         <div className="container mx-auto px-8 md:px-16 lg:px-24">
