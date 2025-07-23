@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { baseUrl } from "../../../services/api/config";
-import fav from "../../../../public/favicon-32x32.png";
+import fav from "../../../../public/01.ico";
 interface HeadProps {
   title?: string;
   description?: string;
@@ -15,7 +15,7 @@ const Head: React.FC<HeadProps> = ({
   keywords,
   image,
   url = baseUrl,
-  favicon,
+  // favicon,
 }) => {
   return (
     <Helmet>
@@ -37,7 +37,8 @@ const Head: React.FC<HeadProps> = ({
       <meta name="twitter:image" content={image} />
       {/* <meta name="twitter:site" content="@yourtwitterhandle" /> */}
       {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href={favicon || fav} />
+      <link rel="icon" type="image/x-icon" href={fav} />
+
       {/* Canonical Link */}
       <link rel="canonical" href={url} />
       {/* Viewport */}
