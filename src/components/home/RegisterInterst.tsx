@@ -9,7 +9,7 @@ const RegisterInterst: React.FC<RegisterInterstProps> = ({
   email,
   darkLogo,
 }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -32,13 +32,13 @@ const RegisterInterst: React.FC<RegisterInterstProps> = ({
 
       {email ? (
         <>
-          {/* <p
+          <p
             className={`text-center ${
               i18n.language === "ar" ? "text-base md:text-md lg:text-lg" : ""
             }`}
           >
             {t("submit your complaint")}
-          </p> */}
+          </p>
           <a
             href={`mailto:${email}`}
             target="_blank"
