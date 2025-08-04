@@ -9,7 +9,7 @@ const RegisterInterst: React.FC<RegisterInterstProps> = ({
   email,
   darkLogo,
 }) => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -22,23 +22,23 @@ const RegisterInterst: React.FC<RegisterInterstProps> = ({
       className="w-full flex flex-col items-center"
     >
       <Logo logo={darkLogo} />
-      <p
+      {/* <p
         className={`text-md md:text-lg lg:text-xl  font-bold ${
           i18n.language === "ar" ? "xl:text-4xl" : ""
         }`}
       >
         {t("Register your interest")}
-      </p>
+      </p> */}
 
       {email ? (
         <>
-          <p
+          {/* <p
             className={`text-center ${
               i18n.language === "ar" ? "text-base md:text-md lg:text-lg" : ""
             }`}
           >
             {t("submit your complaint")}
-          </p>
+          </p> */}
           <a
             href={`mailto:${email}`}
             target="_blank"
