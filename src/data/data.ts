@@ -18,7 +18,7 @@ export const navLinks: Nav[] = [
     id: 3,
   },
   {
-    name: "our range of services",
+    name: "services",
     link: "/services",
     id: 4,
   },

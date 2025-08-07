@@ -1,6 +1,6 @@
 import Hero from "../../components/common/hero/Hero";
 import assets from "../../assets/assets-min.webp";
-import Title from "../../components/common/title/Title";
+// import Title from "../../components/common/title/Title";
 import Loader from "../../components/common/loader/Loader";
 import Head from "../../components/common/meta/Head";
 import { tabTitle } from "../../utils/tabTitle";
@@ -33,9 +33,7 @@ const Services = () => {
     <>
       <Head title={tabTitle(t("Services"))} />
       <Hero
-        title={
-          i18n.language === "ar" ? "نطاق خدماتنا" : t("our range of services")
-        }
+        title={i18n.language === "ar" ? "خدماتنا" : t("our range of services")}
         descreption={t("licensed, integrated, Aligned with your Ambition")}
         image={assets}
       />
@@ -49,9 +47,9 @@ const Services = () => {
         {(services || []).map((service, index) => (
           <ServiceCard service={service} index={index} key={index} />
         ))}
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <Title title="Why Itmam Invest?" />
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {(investments || []).map((card, index) => (
             <div
