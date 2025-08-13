@@ -64,6 +64,7 @@ const App = () => {
           x={data?.x}
           whiteLogo={data?.logo_light || whiteLogo}
           darkLogo={data?.logo_dark || darkLogo}
+          linkedin={data?.linkedin || ""}
         />
         <Routes>
           <Route path="/" element={<Home />} />

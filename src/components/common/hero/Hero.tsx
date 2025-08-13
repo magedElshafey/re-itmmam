@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-white text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl ${
+              className={`text-white text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl  ${
                 descreption ? "mb-2" : ""
               } ${isList ? "text-center" : ""}`}
             >

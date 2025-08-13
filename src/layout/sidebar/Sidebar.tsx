@@ -13,6 +13,7 @@ interface SidebarProps {
   tiktok?: string;
   whatsapp?: string;
   x?: string;
+  linkedin?: string;
 }
 const Sidebar: React.FC<SidebarProps> = ({
   showSidebar,
@@ -24,6 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   tiktok,
   whatsapp,
   x,
+  linkedin,
 }) => {
   const { t } = useTranslation();
   return (
@@ -57,6 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           instagram={instagram}
           youtube={youtube}
           x={x}
+          linkedin={linkedin}
         />
       </div>
     </div>

@@ -15,6 +15,7 @@ interface NavbarProps {
   tiktok?: string;
   whatsapp?: string;
   x?: string;
+  linkedin?: string;
   whiteLogo: string;
   darkLogo: string;
 }
@@ -27,6 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({
   x,
   whiteLogo,
   darkLogo,
+  linkedin,
 }) => {
   const {
     states: { showSidebar, scrolling, language },
@@ -71,6 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({
         tiktok={tiktok}
         whatsapp={whatsapp}
         x={x}
+        linkedin={linkedin}
       />
     </>
   );
