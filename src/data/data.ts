@@ -3,11 +3,6 @@ import about from "../assets/about-01.png";
 import { Nav } from "../types/Nav";
 export const navLinks: Nav[] = [
   {
-    name: "Welcome Page",
-    link: "/",
-    id: 1,
-  },
-  {
     name: "About itmam invest",
     link: "/about",
     id: 2,

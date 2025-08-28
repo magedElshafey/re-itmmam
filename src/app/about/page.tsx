@@ -56,11 +56,7 @@ const AboutPage = () => {
           {regural?.length ? (
             <div className="my-4 md:my-5 lg:my-6 xl:my-7">
               <Title title="Our Regulatory Mandate" />
-              <p className="w-full lg:text-md 2xl:text-xl text-center  mx-auto xl:text-center mb-3 md:mb-4 lg:mb-5 xl:mb-6">
-                {t(
-                  "Under our CMA license we are empowered to deliver three complementary, fully regulated services:"
-                )}
-              </p>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
                 {regural?.map((item: any, index: number) => (
                   <div
@@ -73,7 +69,7 @@ const AboutPage = () => {
                       className="w-full h-[300px] rounded-xl object-cover"
                     />
                     <div className="pb-4 px-3 lg:px-7 mt-5">
-                      <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-2 lg:mb-3">
+                      <p className="text-md md:text-lg lg:text-xl xl:text-2xl font-bold mb-2 lg:mb-3 text-center">
                         {item?.title}
                       </p>
                       <div className="lg:text-center">
@@ -122,49 +118,45 @@ const AboutPage = () => {
               ) : null}
             </div>
           </div>
-        </div>
-
-        <div className="w-screen overflow-hidden flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 bg-[#A56FCC] bg-opacity-20 my-4 md:my-5 lg:my-6 xl:my-7 2xl:my-8">
-          <div className="w-full md:w-1/3">
-            <img
-              alt="about"
-              src={aboutData?.image || about}
-              className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover"
-            />
-          </div>
-          <div className="w-full flex-1  h-auto md:max-h-[300px] py-4 flex items-center ">
-            <div className="container mx-auto px-3 md:px-6 lg:px-8">
-              <p
-                className={`font-bold text-xl md:text-2xl lg:text-3xl  mb-2  ${
-                  i18n.language === "ar" ? "xl:text-5xl" : "xl:text-4xl"
-                }`}
-              >
-                {t("core values")}
-              </p>
-              <ul>
-                {values?.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-3 mb-1 flex-wrap"
-                  >
-                    <p
-                      className={`font-bold ${
-                        i18n.language === "ar"
-                          ? "text-md md:text-lg lg:text-xl xl:text-3xl"
-                          : "text-base lg:text-lg"
-                      }`}
+          <div className="overflow-hidden flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 bg-[#A56FCC] bg-opacity-20 my-4 md:my-5 lg:my-6 xl:my-7 2xl:my-8">
+            <div className="w-full md:w-1/3">
+              <img
+                alt="about"
+                src={aboutData?.image || about}
+                className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover"
+              />
+            </div>
+            <div className="w-full flex-1  h-auto md:max-h-[300px] py-4 flex items-center ">
+              <div className="container mx-auto px-3 md:px-6 lg:px-8">
+                <p
+                  className={`font-bold text-xl md:text-2xl lg:text-3xl  mb-2  ${
+                    i18n.language === "ar" ? "xl:text-5xl" : "xl:text-4xl"
+                  }`}
+                >
+                  {t("core values")}
+                </p>
+                <ul>
+                  {values?.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-3 mb-1 flex-wrap"
                     >
-                      {item?.name} :
-                    </p>
-                    <HtmlRenderer html={item?.description} />
-                  </li>
-                ))}
-              </ul>
+                      <p
+                        className={`font-bold ${
+                          i18n.language === "ar"
+                            ? "text-md md:text-lg lg:text-xl xl:text-3xl"
+                            : "text-base lg:text-lg"
+                        }`}
+                      >
+                        {item?.name} :
+                      </p>
+                      <HtmlRenderer html={item?.description} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="container mx-auto px-3 md:px-16 lg:px-24 my-4 md:my-6 lg:my-8 xl:my-12">
-          {/* about supports */}
           {setUsData?.length ? (
             <div className="my-5 md:my-6 lg:my-7 xl:my-8">
               <Title title="What Sets Us Apart" />
