@@ -44,7 +44,6 @@ const AboutPage = () => {
       <div className="overflow-x-hidden">
         <Hero
           image={bg}
-          title={t("About itmam invest")}
           descreption={t("We take your wealth to new frontiers")}
         />
         {aboutData?.description && (
@@ -118,8 +117,8 @@ const AboutPage = () => {
               ) : null}
             </div>
           </div>
-          <div className="overflow-hidden flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 bg-[#A56FCC] bg-opacity-20 my-4 md:my-5 lg:my-6 xl:my-7 2xl:my-8">
-            <div className="w-full md:w-1/3">
+          <div className="overflow-hidden flex flex-col md:flex-row items-center    bg-[#A56FCC] bg-opacity-20 my-4 md:my-5 lg:my-6 xl:my-7 2xl:my-8">
+            <div className="w-full md:w-[27%]">
               <img
                 alt="about"
                 src={aboutData?.image || about}
@@ -127,7 +126,7 @@ const AboutPage = () => {
               />
             </div>
             <div className="w-full flex-1  h-auto md:max-h-[300px] py-4 flex items-center ">
-              <div className="container mx-auto px-3 md:px-6 lg:px-8">
+              <div className="container mx-auto ps-3">
                 <p
                   className={`font-bold text-xl md:text-2xl lg:text-3xl  mb-2  ${
                     i18n.language === "ar" ? "xl:text-5xl" : "xl:text-4xl"

@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import HtmlRenderer from "../html/HtmlRender";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-
+import { useLocation } from "react-router-dom";
+import i18n from "../../../services/i18n/i18n";
 interface HeroProps {
   title?: string;
   descreption?: string;
@@ -24,6 +25,7 @@ const Hero: React.FC<HeroProps> = ({
   isList = false,
 }) => {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   return (
     <div
       className="w-screen h-[60vh] bg-cover bg-center relative overflow-hidden"
@@ -43,7 +45,17 @@ const Hero: React.FC<HeroProps> = ({
               {t(title)}
             </motion.h1>
           )}
-          <div className="text-center text-white text-md md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+          <div
+            className={
+              pathname === "/about"
+                ? `text-center text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold ${
+                    i18n.language === "ar"
+                      ? "text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+                      : ""
+                  }`
+                : "text-center text-white text-md md:text-base lg:text-lg xl:text-xl 2xl:text-2xl"
+            }
+          >
             {descreption && <HtmlRenderer html={descreption} />}
           </div>
           {btns && btns?.length && (
