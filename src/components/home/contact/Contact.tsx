@@ -3,10 +3,17 @@ import MainInput from "../../common/inputs/MainInput";
 import SendButton from "../../common/buttons/SendButton";
 import useNewsLetterLogic from "./logic/useNewsLetterLogic";
 import { motion } from "framer-motion";
+import MainTextArea from "../../common/inputs/MainTextArea";
 const Contact = () => {
   const {
-    states: { name, phone , email },
-    handlers: { handleNameChange, handlePhoneChange, handleEmailChange ,  handleSubmit },
+    states: { name, phone, email, message },
+    handlers: {
+      handleNameChange,
+      handlePhoneChange,
+      handleEmailChange,
+      handleSubmit,
+      handleMessage,
+    },
     isPending,
   } = useNewsLetterLogic();
   return (
@@ -41,6 +48,9 @@ const Contact = () => {
             value={email}
             onChange={handleEmailChange}
           />
+        </div>
+        <div className="my-4">
+          <MainTextArea value={message} onChange={handleMessage} />
         </div>
         <div className="w-full flex justify-center">
           <SendButton disabled={isPending} />

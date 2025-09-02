@@ -17,12 +17,12 @@ import darkLogo from "./assets/darkLogo-min.webp";
 import footerBg from "./assets/footer-bg-min.webp";
 // pages
 import OfflineNetworkPage from "./app/offline/page";
+import NotFound from "./app/not-found/NotFound";
 const Home = lazy(() => import("./app/home/page"));
 const About = lazy(() => import("./app/about/page"));
 const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
 const Services = lazy(() => import("./app/services/page"));
 const ServiceDetails = lazy(() => import("./app/services/serviceById/page"));
-// const Contact = lazy(() => import("./app/contact/page"));
 const Privacy = lazy(() => import("./app/privacy/page"));
 const Terms = lazy(() => import("./app/terms/page"));
 const Policy = lazy(() => import("./app/policy/page"));
@@ -32,7 +32,6 @@ const Lists = lazy(() => import("./app/lists/Lists"));
 const Publication = lazy(() => import("./app/publication/page"));
 const Complaints = lazy(() => import("./app/complaints/page"));
 const Team = lazy(() => import("./app/team/page"));
-const NotFound = lazy(() => import("./app/not-found/page"));
 const App = () => {
   useLocalizeDocumentAttributes();
   const { isLoading, isError, data } = useSettings();
@@ -45,7 +44,6 @@ const App = () => {
   if (isLoading || loadingServices || isPending) return <Loader />;
   if (isError || errorServices) return <NotFound />;
   if (!isOnline) return <OfflineNetworkPage />;
-  console.log("data from app", data);
   return (
     <>
       <Suspense fallback={<Loader />}>

@@ -9,6 +9,7 @@ const useNewsLetterLogic = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
@@ -17,6 +18,9 @@ const useNewsLetterLogic = () => {
   };
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+  };
+  const handleMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,11 +33,15 @@ const useNewsLetterLogic = () => {
     } else if (!phone.trim()) {
       toast.error(t("phone field is required"));
       return;
+    } else if (!message.trim()) {
+      toast.error(t("message field is required"));
+      return;
     } else {
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
       formData.append("phone", phone);
+      formData.append("message", message);
       try {
         const response = await mutateAsync(formData);
         if (response?.status) {
@@ -41,6 +49,7 @@ const useNewsLetterLogic = () => {
           setName("");
           setPhone("");
           setEmail("");
+          setMessage("");
         }
       } catch (error) {
         handlePromisError(error);
@@ -52,12 +61,14 @@ const useNewsLetterLogic = () => {
       name,
       phone,
       email,
+      message,
     },
     handlers: {
       handleNameChange,
       handlePhoneChange,
       handleEmailChange,
       handleSubmit,
+      handleMessage,
     },
     isPending,
   };
