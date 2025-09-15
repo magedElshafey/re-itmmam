@@ -9,7 +9,7 @@ import useWhyUs from "./api/useWhyUs";
 import useHomePage from "./api/useHomePage";
 import HtmlRenderer from "../../components/common/html/HtmlRender";
 const HomePage = () => {
-  const { isError, isLoading, data } = useHeroSection();
+  const { isError, isLoading, data, isFetching } = useHeroSection();
   const {
     isError: whyUsError,
     isLoading: loadingWhyUs,
@@ -21,7 +21,7 @@ const HomePage = () => {
     data: homePage,
   } = useHomePage();
   console.log("homePage", homePage);
-  if (isLoading || loadingWhyUs || loadingHomePage) {
+  if (isLoading || loadingWhyUs || loadingHomePage || isFetching) {
     return <Loader />;
   }
   if (isError || whyUsError || homePageError) {

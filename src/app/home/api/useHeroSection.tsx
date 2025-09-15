@@ -9,6 +9,8 @@ const useHeroSection = () => {
       const { data } = await Axios.get(heroHome);
       return data?.data as HeroHome;
     },
+    staleTime: 0,
+    refetchOnMount: "always",
   });
 };
 export default useHeroSection;
