@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 // hooks
 import useLocalizeDocumentAttributes from "./hooks/common/ui/useLocalizeDocumentAttributes";
@@ -18,6 +18,7 @@ import footerBg from "./assets/footer-bg-min.webp";
 // pages
 import OfflineNetworkPage from "./app/offline/page";
 import NotFound from "./app/not-found/NotFound";
+import SplashScreen from "./components/common/splash-screen/SplashScreen";
 const Home = lazy(() => import("./app/home/page"));
 const About = lazy(() => import("./app/about/page"));
 const AboutDetails = lazy(() => import("./app/aboutDetails/AboutDetails"));
@@ -35,6 +36,15 @@ const Team = lazy(() => import("./app/team/page"));
 const App = () => {
   useLocalizeDocumentAttributes();
   const { isLoading, isError, data } = useSettings();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const {
     isLoading: loadingServices,
     isError: errorServices,
@@ -46,35 +56,38 @@ const App = () => {
   if (!isOnline) return <OfflineNetworkPage />;
   return (
     <>
-      <Suspense fallback={<Loader />}>
-        <Head
-          title={data?.name}
-          description={data?.description}
-          favicon={data?.favicon}
-        />
-        <FixedBtn whatsapp={data?.whatsapp} />
-        <Navbar
-          facebook={data?.facebook}
-          instagram={data?.instagram}
-          youtube={data?.youtube}
-          tiktok={data?.tiktok}
-          whatsapp={data?.whatsapp}
-          x={data?.x}
-          whiteLogo={data?.logo_light || whiteLogo}
-          darkLogo={data?.logo_dark || darkLogo}
-          linkedin={data?.linkedin || ""}
-        />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/about/:id" element={<AboutDetails />} />
+      {loading ? (
+        <SplashScreen />
+      ) : (
+        <Suspense fallback={<></>}>
+          <Head
+            title={data?.name}
+            description={data?.description}
+            favicon={data?.favicon}
+          />
+          <FixedBtn whatsapp={data?.whatsapp} />
+          <Navbar
+            facebook={data?.facebook}
+            instagram={data?.instagram}
+            youtube={data?.youtube}
+            tiktok={data?.tiktok}
+            whatsapp={data?.whatsapp}
+            x={data?.x}
+            whiteLogo={data?.logo_light || whiteLogo}
+            darkLogo={data?.logo_dark || darkLogo}
+            linkedin={data?.linkedin || ""}
+          />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/about/:id" element={<AboutDetails />} />
 
-          <Route path="/declerations" element={<Lists />} />
-          <Route path="/publications" element={<Publication />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:id/:slug?" element={<ServiceDetails />} />
-          {/* <Route
+            <Route path="/declerations" element={<Lists />} />
+            <Route path="/publications" element={<Publication />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:id/:slug?" element={<ServiceDetails />} />
+            {/* <Route
             path="/contact"
             element={
               <Contact
@@ -83,54 +96,55 @@ const App = () => {
               />
             }
           /> */}
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/policy" element={<Policy />} />
-          <Route
-            path="/customer-complaints"
-            element={
-              <CustomerComplaints darkLogo={data?.logo_dark || darkLogo} />
-            }
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/policy" element={<Policy />} />
+            <Route
+              path="/customer-complaints"
+              element={
+                <CustomerComplaints darkLogo={data?.logo_dark || darkLogo} />
+              }
+            />
+            <Route
+              path="/inquires"
+              element={
+                <Callus
+                  phone1={data?.phone}
+                  phone2={data?.phone2}
+                  email={data?.email}
+                  logo={data?.logo_dark || darkLogo}
+                />
+              }
+            />
+            <Route
+              path="/complaints"
+              element={<Complaints darkLogo={data?.logo_dark || darkLogo} />}
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer
+            email={data?.email}
+            location={data?.location}
+            facebook={data?.facebook}
+            instagram={data?.instagram}
+            youtube={data?.youtube}
+            tiktok={data?.tiktok}
+            whatsapp={data?.whatsapp}
+            x={data?.x}
+            services={services}
+            whiteLogo={data?.logo_light || whiteLogo}
+            slogan={data?.slogan}
+            copyRight={data?.copyrights}
+            footer_image={data?.footer_image || footerBg}
+            embed_map={data?.embed_map}
+            address={data?.address || ""}
+            phone1={data?.phone || ""}
+            phone2={data?.phone2 || ""}
+            support_email={data?.support_email || ""}
+            linkedin={data?.linkedin || ""}
           />
-          <Route
-            path="/inquires"
-            element={
-              <Callus
-                phone1={data?.phone}
-                phone2={data?.phone2}
-                email={data?.email}
-                logo={data?.logo_dark || darkLogo}
-              />
-            }
-          />
-          <Route
-            path="/complaints"
-            element={<Complaints darkLogo={data?.logo_dark || darkLogo} />}
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer
-          email={data?.email}
-          location={data?.location}
-          facebook={data?.facebook}
-          instagram={data?.instagram}
-          youtube={data?.youtube}
-          tiktok={data?.tiktok}
-          whatsapp={data?.whatsapp}
-          x={data?.x}
-          services={services}
-          whiteLogo={data?.logo_light || whiteLogo}
-          slogan={data?.slogan}
-          copyRight={data?.copyrights}
-          footer_image={data?.footer_image || footerBg}
-          embed_map={data?.embed_map}
-          address={data?.address || ""}
-          phone1={data?.phone || ""}
-          phone2={data?.phone2 || ""}
-          support_email={data?.support_email || ""}
-          linkedin={data?.linkedin || ""}
-        />
-      </Suspense>
+        </Suspense>
+      )}
     </>
   );
 };
